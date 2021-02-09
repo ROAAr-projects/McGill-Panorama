@@ -9,40 +9,42 @@
 
     <style>
     #panorama {
-        width: 1920px;
-        height: 1080px;
-        margin: none;
+        width: 1600px;
+        height: 1050px;
+        margin: auto;
         /*margin-top: 10%; removed to minimize frame*/ 
     }
     body{
         background-color: black;
     }
     .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    margin-top:5%;
+      margin-left: 8%;
+    margin-right: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
     }
 
-    /* Modal Content/Box */
     .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: auto; 
+    margin-left: auto;
+    margin-right: auto; 
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%; 
     }
         
     /* The Close Button */
     .close {
     color: #aaa;
-    float: right;
+    float: left;
     font-size: 28px;
     font-weight: bold;
     }
@@ -54,13 +56,48 @@
     cursor: pointer;
     }
 
+     /* The Close Button */
+    .close1 {
+    color: #aaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+    }
+
+    .close1:hover,
+    .close1:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+
     .hotspot{
          height: 200px;
         width: 250px;
         background: #f00;
-        background-image:url("caticon.png");
+        background-image:url("images/caticon.png");
     }
+    
+    .hotspotPuzzleImage{
+        height: 200px;
+        width: 250px;
+        background: #f00;
+        background-image:url("images/allie_douglas_puzzle.jpg");
     }
+
+    /* keyframes */
+    @-webkit-keyframes zoomIn{
+        from { -webkit-transform:scale(0)}
+        to {-webkit-transform:scale(1)}
+    }
+    
+    @keyframes zoom{
+        from{transform:scale(0)}
+        to{transform:scale(1)}
+    }
+
+}
     </style>
 </head>
 <body>
@@ -68,25 +105,27 @@
 <div id="panorama"></div>
 <!--audio files-->
     <audio id = "audio">
-        <source src = "lofi.mp3" type="audio/mp3">
-        <source src = "lofi.ogg" type="audio/ogg">
+        <source src = "sounds/lofi.mp3" type="audio/mp3">
+        <source src = "sounds/lofi.ogg" type="audio/ogg">
     </audio>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content this is where we initialize another html file-->
   <div class="modal-content">
     <span class="close">&times;</span>
             <iframe src="hmicrojam/index.html" name="targetframe" allowTransparency="false" 
          scrolling="no" frameborder="5" width="500px" height="500px">
-        Here is 
-        <!--what could be possible to do here is add the contents of hmicrojam/index.html in this div 
-        instead of using iframe, since it has a tendency to break design elements-->
         </iframe>
   </div>
-
 </div>
+
+<!-- image popup-->
+<div id = "imageModal" class="modal">
+    <span class="close1">&times;</span>
+    <img src="images/allie_douglas_puzzle.jpg" class="modal-content" style="width:80%;height:80%;margin-left:auto; margin-right:auto>
+</div>
+
 
 
 <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
@@ -254,6 +293,16 @@ pannellum.viewer('panorama', {
                 "URL": "https://google.com",
                 "text":"hotspot 3"
            		},
+                {
+                //hotspot of the poster. TODO: change cssClass name as well as css class above in <style> </style>
+                "pitch": 0,
+                "yaw": -60,
+                "type": "info",
+               "cssClass": "hotspotPuzzleImage",
+               "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "imageModal",
+                "text":"this is a poster"
+                },
             ]
         },
          //added 4th panorama
@@ -305,7 +354,9 @@ pannellum.viewer('panorama', {
 
 //global vars
 var modal  = document.getElementById("myModal");
+var modalImage = document.getElementById("imageModal");
 var span = document.getElementsByClassName("close")[0];
+var spanImage = document.getElementsByClassName("close1")[0];
 var audio1 = document.getElementById("audio");
 var a1IsPlaying = false;
 
@@ -332,7 +383,10 @@ function openWindowFunc(hotSpotDiv, args){
 span.onclick = function() {
     //when we click on the span (which is the class name of the button) and it hides that modal (which is out div)
   modal.style.display = "none";
-  modal.close();
+}
+
+spanImage.onclick = function(){
+    modalImage.style.display = "none";
 }
 
 //function that checks for a password, enters a new site once enabled
