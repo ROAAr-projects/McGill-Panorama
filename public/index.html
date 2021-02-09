@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Custom hot spots</title>
+
+    <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
+
+
+    <style>
+    #panorama {
+        width: 1920px;
+        height: 1080px;
+        margin: none;
+        /*margin-top: 10%; removed to minimize frame*/ 
+    }
+    body{
+        background-color: black;
+    }
+    .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    }
+        
+    /* The Close Button */
+    .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+    .hotspot{
+         height: 200px;
+        width: 250px;
+        background: #f00;
+        background-image:url("caticon.png");
+    }
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<!--audio files-->
+    <audio id = "audio">
+        <source src = "lofi.mp3" type="audio/mp3">
+        <source src = "lofi.ogg" type="audio/ogg">
+    </audio>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content this is where we initialize another html file-->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+            <iframe src="hmicrojam/index.html" name="targetframe" allowTransparency="false" 
+         scrolling="no" frameborder="5" width="500px" height="500px">
+        Here is 
+        <!--what could be possible to do here is add the contents of hmicrojam/index.html in this div 
+        instead of using iframe, since it has a tendency to break design elements-->
+        </iframe>
+  </div>
+
+</div>
+
+
+<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
+<!-- JS script that we use on the html file. Other JS files can also be added-->
+<script>
+pannellum.viewer('panorama', {   
+    //initialize the starting photosphere
+    "default": {
+        "firstScene": "pano1",
+    },
+
+    //add all the possible different photospheres in here
+    "scenes": {
+    "pano1": {
+            "title": "Lower Campus",
+            "author": "McGill Library",
+            "hfov": 300,
+            "yaw": 10,
+            "autoLoad": true,
+            "horizonRoll": -2,//added to correct non-level panorama
+            "compass": true,
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/wtVV2ZA.jpeg",
+            "hotSpots": [
+                {// need to change icon
+                    "pitch": -0.6,
+                    "yaw": 120,
+                    "type": "scene",
+                    "text": "To Molson Stadium",
+                    "sceneId": "pano2",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                },
+                {
+                    "pitch": -2.1,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "To Moyse Hall",
+                   "sceneId": "pano4",
+                   "targetYaw": 5,
+
+             },
+            {
+                "pitch": 14.1,
+                "yaw": 1.5,
+                "type": "info",
+                "URL": "https://google.com",
+                "text":"hotspot1"
+            },                
+            {
+                    "pitch": 5,
+                    "yaw": 200,
+                    "type": "info",
+                    "clickHandlerFunc": playAudio,
+                    "clickHandlerArgs": "sound1",
+                    "text":"audio1"
+            },
+            {
+                //hotspot of the poster. TODO: change cssClass name as well as css class above in <style> </style>
+                "pitch": 0,
+                "yaw": -60,
+                "type": "info",
+               "cssClass": "hotspot",
+               "clickHandlerFunc": openWindowFunc,
+                    "clickHandlerArgs": "myModal",
+                "text":"this is a poster"
+            }
+           
+            ]
+        },
+        "pano2": {
+            "title": "Molson Arena",
+            "author": "McGill Library",
+            "hfov": 300,
+            "pitch": -3,
+            "yaw": 17,
+            "compass": true,
+            "autoLoad": true,
+            "type": "equirectangular",
+            //image of the panorama
+           "panorama": "https://i.imgur.com/SQnSsQt.jpeg",//updated pano to bw image
+            //the list of hotspots belonging to this specific hotspot
+            "hotSpots": [
+                {
+                    "pitch": 5.1,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "To Lower Campus",
+                    "sceneId": "pano1"
+                },
+                {
+                    "pitch": -2.1,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "To Birks Reading Room",
+                    "sceneId": "pano3"
+                },
+                {
+                    "pitch": 14.1,
+                    "yaw": 1.5,
+                    "type": "info",
+                    "URL": "https://google.com",
+                    "text":"Puzzle me this"
+                },
+                {
+                    "pitch": 9.4,
+                    "yaw": 22.6,
+                    "type": "info",
+                    "URL": "https://google.com",
+                    "text":"hotspot 2"
+                },
+                {
+                    "pitch": 9.4,
+                    "yaw": 102.6,
+                    "type": "info",
+                    "clickHandlerFunc": openWindowFunc,
+                    "clickHandlerArgs": "myModal",
+                    "text":"hotspot 4"
+                },
+                {
+                    "pitch": 0.9,
+                    "yaw": 144.4,
+                    "type": "info",
+                    "clickHandlerFunc": passWord,
+                    "clickHandlerArgs": "hotspot3",
+                }
+            ]
+        },
+        //add the second panorama lower campus
+    
+         //added third panorama
+        "pano3": {
+            "title": "Birks Reading Room",
+            "author": "McGill Library",
+            "hfov": 300,
+            "yaw": 5,
+            "compass": true,
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/8IdaXtl.jpeg",
+            "hotSpots": [
+                {//need to set location and icon still
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "To Molson Stadium",
+                    "sceneId": "pano2",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                },
+                {//need to set position and icon
+                    "pitch": -2.1,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "To Lower Campus",
+                    "sceneId": "pano1"
+                },
+           		{
+                "pitch": 0.9,
+                "yaw": 144.4,
+                "type": "info",
+                "URL": "https://google.com",
+                "text":"hotspot 3"
+           		},
+            ]
+        },
+         //added 4th panorama
+        "pano4": {
+            "title": "Moyse Hall",
+            "author": "McGill Library",
+            "hfov": 200,
+            "yaw": 5,
+            "compass": true,
+            "type": "equirectangular",
+           
+            "panorama": "https://i.imgur.com/s5RrK6d.jpeg",
+            "hotSpots": [
+                {//need to set icon 
+                    "pitch": -8,
+                    "yaw": 75,
+                    "type": "scene",
+                    "text": "To Molson Stadium",
+                    "sceneId": "pano2",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                },
+                {//need to change icon
+                    "pitch": -2.1,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "To Lower Campus",
+                    "sceneId": "pano1"
+                },
+                 {
+                    "pitch": -8,
+                    "yaw": -75,
+                    "type": "scene",
+                    "text": "To Birks Reading Room",
+                    "sceneId": "pano3"
+                },
+           		{
+                "pitch": 0.9,
+                "yaw": 144.4,
+                "type": "info",
+                "URL": "https://google.com",
+                "text":"hotspot 3"
+           		},
+            ]
+        }
+        
+    
+}});
+
+//global vars
+var modal  = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+var audio1 = document.getElementById("audio");
+var a1IsPlaying = false;
+
+//function to play audio
+function playAudio(hotspotDiv, args){
+    if(a1IsPlaying){
+        audio.pause();
+        a1IsPlaying = false;
+    } else{
+        audio.play();
+        a1IsPlaying = true;
+    }
+}
+
+//functions opens a modal
+function openWindowFunc(hotSpotDiv, args){
+    //it takes the variable modal that we have initialized as "myModal" which is an id we
+    //assign in the html section
+    var tempModal = document.getElementById(args);
+    tempModal.style.display = "block";
+};
+
+//function that checks for the element close in html and closes the modal for that specific span of the modal
+span.onclick = function() {
+    //when we click on the span (which is the class name of the button) and it hides that modal (which is out div)
+  modal.style.display = "none";
+  modal.close();
+}
+
+//function that checks for a password, enters a new site once enabled
+function passWord(hotspotDiv, args) {
+    var testV = 1;
+    var pass1 = prompt('Please Enter Your Password',' ');
+    //the function loops until a user gives the right password
+    while (testV < 3) {
+        if (!pass1)
+            history.go(-1);
+        if (pass1.toLowerCase() == "hello") {
+            //if the password is right, open and break the loop
+            window.open('passwordsite.html');
+         break;
+        }
+        //give at least 3 tries -> this can be changed
+        testV+=1;
+        var pass1 =
+        prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
+    }
+        if (pass1.toLowerCase()!="password" & testV ==3)
+        history.go(-1);
+    return " ";
+}
+
+</script>
+
+</body>
+</html>
