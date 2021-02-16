@@ -57,7 +57,7 @@ pannellum.viewer('panorama', {
                 "type": "info",
                "cssClass": "hotspot",
                "clickHandlerFunc": openWindowFunc,
-                    "clickHandlerArgs": "myModal",
+                "clickHandlerArgs": "imageModalCompare",
                 "text":"this is a poster"
             }
            
@@ -216,10 +216,17 @@ pannellum.viewer('panorama', {
 }});
 
 //global vars
+//modals
 var modal  = document.getElementById("myModal");
 var modalImage = document.getElementById("imageModal");
+var modalImageCompare = document.getElementById("imageModalCompare");
+
+//close buttons
 var span = document.getElementsByClassName("close")[0];
 var spanImage = document.getElementsByClassName("close1")[0];
+var spanImage2 = document.getElementsByClassName("close2")[0];
+
+//audio
 var audio1 = document.getElementById("audio");
 var a1IsPlaying = false;
 
@@ -251,6 +258,12 @@ span.onclick = function() {
 spanImage.onclick = function(){
     modalImage.style.display = "none";
 }
+
+spanImage2.onclick = function(){
+    modalImageCompare.style.display = "none";
+}
+
+
 
 //function that checks for a password, enters a new site once enabled
 function passWord(hotspotDiv, args) {

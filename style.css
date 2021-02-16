@@ -1,8 +1,6 @@
 #panorama {
-    width: 1250px;
-    height: 800px;
-    max-width: 1600px;
-    max-height: 1050px;
+    width: 1600px;
+    height: 1050px;
     margin: auto;
     /*margin-top: 10%; removed to minimize frame*/ 
 }
@@ -26,13 +24,13 @@ background-color: rgba(0,0,0,0.4);
 margin: auto; 
 width: 60%;
 height: 100%;
-margin-left: 12%;
+margin-left: 14%;
 padding: 20px;
 
 }
     
 /* The Close Button */
-.close {
+.close, .close1, .close2 {
 color: #aaa;
 float: left;
 font-size: 28px;
@@ -40,22 +38,11 @@ font-weight: bold;
 }
 
 .close:hover,
-.close:focus {
-color: black;
-text-decoration: none;
-cursor: pointer;
-}
-
-/* The Close Button */
-.close1 {
-color: #aaa;
-float: left;
-font-size: 28px;
-font-weight: bold;
-}
-
+.close:focus,
 .close1:hover,
-.close1:focus {
+.close1:focus, 
+.close2:hover,
+.close2:focus{
 color: black;
 text-decoration: none;
 cursor: pointer;
