@@ -176,7 +176,7 @@ pannellum.viewer('panorama', {
                     "type": "info",
                     "cssClass": "welcomeHotspot",
                     "text": "Welcome to McGill's Lower Campus. Here you see the Arts Building, but click and drag and you'll see the path to other places to explore on Campus. Go left for the Redpath Museum, or go right to make your way to Birks Library and the Molson Stadium."
-                    // on click I want a message custom to each photosphere to appear. for this one it would read "From here, the heart of lower campus, you can explore the view, head to the Redpath Museum, into Moyse Hall, or over to the east towards Birks reading room and Molson Stadium."
+                    
                     
                 },
                 {
@@ -304,7 +304,6 @@ pannellum.viewer('panorama', {
                 }
             ]
         },    
-         //added third panorama
         "pano3": {
             "title": "Birks Reading Room",
             "author": "McGill Library",
@@ -333,6 +332,17 @@ pannellum.viewer('panorama', {
                     "text": "To Lower Campus",
                     "sceneId": "pano1"
                 },
+                {
+                //Rosemary Brown puzzle
+                "pitch": 0,
+                "yaw": -60,
+                "type": "info",
+               "cssClass": "hotspotPuzzleImage",
+               "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "imageModal",
+                "text":"Solve the puzzle, and enter the password in your card inventory"
+                },
+           		
            		{
                 "pitch": 0.9,
                 "yaw": 144.4,
@@ -343,7 +353,6 @@ pannellum.viewer('panorama', {
                 
             ]
         },
-         //added 4th panorama
         "pano4": {
             "title": "Moyse Hall",
             "author": "McGill Library",
@@ -402,7 +411,7 @@ pannellum.viewer('panorama', {
             "panorama": "https://i.imgur.com/AAeUIbl.jpeg",
             "hotSpots": [
             
-                {//need to change position
+                {
                     "pitch": -2.1,
                     "yaw": 180,
                     "type": "scene",
@@ -411,7 +420,7 @@ pannellum.viewer('panorama', {
                     "sceneId": "pano1"
                 },
                 {
-                //hotspot of the poster. TODO: change cssClass name as well as css class above in <style> </style>
+                //allie v. douglas puzzle
                 "pitch": 0,
                 "yaw": -60,
                 "type": "info",

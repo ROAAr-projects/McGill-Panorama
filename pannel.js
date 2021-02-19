@@ -17,7 +17,7 @@ pannellum.viewer('panorama', {
             "type": "equirectangular",
             "panorama": "https://i.imgur.com/wtVV2ZA.jpeg",
             "hotSpots": [
-                {// need to change icon
+                {
                     "pitch": -0.6,
                     "yaw": 120,
                     "type": "scene",
@@ -121,7 +121,6 @@ pannellum.viewer('panorama', {
                 }
             ]
         },
-        //add the second panorama lower campus
     
          //added third panorama
         "pano3": {
@@ -156,16 +155,7 @@ pannellum.viewer('panorama', {
                 "URL": "https://google.com",
                 "text":"hotspot 3"
            		},
-                {
-                //hotspot of the poster. TODO: change cssClass name as well as css class above in <style> </style>
-                "pitch": 0,
-                "yaw": -60,
-                "type": "info",
-               "cssClass": "hotspotPuzzleImage",
-               "clickHandlerFunc": openWindowFunc,
-                "clickHandlerArgs": "imageModal",
-                "text":"this is a poster"
-                },
+                
             ]
         },
          //added 4th panorama
