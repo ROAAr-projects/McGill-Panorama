@@ -17,10 +17,20 @@ pannellum.viewer('panorama', {
             "type": "equirectangular",
             "panorama": "https://i.imgur.com/wtVV2ZA.jpeg",
             "hotSpots": [
+               {//i want this 'welcomHotspot' with the image of the martlet to appear in the bottom left of every landing view. I want an info box to appear on click. How do we make that happen?
+                    "pitch": -15,
+                    "yaw": -30,
+                    "type": "info",
+                    "cssClass": "welcomeHotspot",
+                    "text": "Welcome to McGill's Lower Campus. Here you see the Arts Building, but click and drag and you'll see the path to other places to explore on Campus. Go left for the Redpath Museum, or go right to make your way to Birks Library and the Molson Stadium."
+                    
+                    
+                },
                 {
                     "pitch": -0.6,
                     "yaw": 120,
                     "type": "scene",
+                    "cssClass": "directionArrow",
                     "text": "To Molson Stadium",
                     "sceneId": "pano2",
                     "targetYaw": -23,
@@ -30,11 +40,29 @@ pannellum.viewer('panorama', {
                     "pitch": -2.1,
                     "yaw": 0,
                     "type": "scene",
+                    "cssClass": "directionArrow",
                     "text": "To Moyse Hall",
                    "sceneId": "pano4",
                    "targetYaw": 5,
 
              },
+              {
+                    "pitch": -2.1,
+                    "yaw": 45,
+                    "type": "scene",
+                     "cssClass": "directionArrow",
+                    "text": "To Birks Reading Room",
+                    "sceneId": "pano3"
+                },
+                 {
+                    "pitch": -2.1,
+                    "yaw": -120,
+                    "type": "scene",
+                     "cssClass": "directionArrow",
+                    "text": "To Redpath Museum",
+                    "sceneId": "pano5"
+                },
+                
             {
                 "pitch": 14.1,
                 "yaw": 1.5,
@@ -78,15 +106,17 @@ pannellum.viewer('panorama', {
             "hotSpots": [
                 {
                     "pitch": 5.1,
-                    "yaw": 0,
+                    "yaw": -30,
                     "type": "scene",
+                    "cssClass": "directionArrow",
                     "text": "To Lower Campus",
                     "sceneId": "pano1"
                 },
                 {
                     "pitch": -2.1,
-                    "yaw": 0,
+                    "yaw": 15,
                     "type": "scene",
+                    "cssClass": "directionArrow",
                     "text": "To Birks Reading Room",
                     "sceneId": "pano3"
                 },
@@ -120,9 +150,7 @@ pannellum.viewer('panorama', {
                     "clickHandlerArgs": "hotspot3",
                 }
             ]
-        },
-    
-         //added third panorama
+        },    
         "pano3": {
             "title": "Birks Reading Room",
             "author": "McGill Library",
@@ -132,22 +160,36 @@ pannellum.viewer('panorama', {
             "type": "equirectangular",
             "panorama": "https://i.imgur.com/8IdaXtl.jpeg",
             "hotSpots": [
-                {//need to set location and icon still
+                /*
+                 I don't think we necessarily need this scene link. {
                     "pitch": -0.6,
                     "yaw": 37.1,
                     "type": "scene",
+                    "cssClass": "directionArrow",
                     "text": "To Molson Stadium",
                     "sceneId": "pano2",
                     "targetYaw": -23,
                     "targetPitch": 2
-                },
+                },*/
                 {//need to set position and icon
                     "pitch": -2.1,
-                    "yaw": 0,
+                    "yaw": 45,
                     "type": "scene",
+                     "cssClass": "directionArrow",
                     "text": "To Lower Campus",
                     "sceneId": "pano1"
                 },
+                {
+                //Rosemary Brown puzzle
+                "pitch": 0,
+                "yaw": -60,
+                "type": "info",
+               "cssClass": "hotspotPuzzleImage",
+               "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "imageModal",
+                "text":"Solve the puzzle, and enter the password in your card inventory"
+                },
+           		
            		{
                 "pitch": 0.9,
                 "yaw": 144.4,
@@ -158,7 +200,6 @@ pannellum.viewer('panorama', {
                 
             ]
         },
-         //added 4th panorama
         "pano4": {
             "title": "Moyse Hall",
             "author": "McGill Library",
@@ -169,29 +210,73 @@ pannellum.viewer('panorama', {
            
             "panorama": "https://i.imgur.com/s5RrK6d.jpeg",
             "hotSpots": [
-                {//need to set icon 
+                {
                     "pitch": -8,
                     "yaw": 75,
                     "type": "scene",
+                     "cssClass": "directionArrow",
                     "text": "To Molson Stadium",
                     "sceneId": "pano2",
                     "targetYaw": -23,
                     "targetPitch": 2
                 },
-                {//need to change icon
+                {
                     "pitch": -2.1,
                     "yaw": 0,
                     "type": "scene",
+                     "cssClass": "directionArrow",
                     "text": "To Lower Campus",
                     "sceneId": "pano1"
                 },
+            
                  {
                     "pitch": -8,
                     "yaw": -75,
                     "type": "scene",
+                     "cssClass": "directionArrow",
                     "text": "To Birks Reading Room",
                     "sceneId": "pano3"
                 },
+           		{
+                "pitch": 0.9,
+                "yaw": 144.4,
+                "type": "info",
+                "URL": "https://google.com",
+                "text":"hotspot 3"
+           		},
+            ]
+        },
+         "pano5": {
+            "title": "Redpath Museum",
+            "author": "McGill Library",
+            "hfov": 200,
+            "yaw": 0,
+            "compass": true,
+            "autoload": true,
+            "type": "equirectangular",
+           
+            "panorama": "https://i.imgur.com/AAeUIbl.jpeg",
+            "hotSpots": [
+            
+                {
+                    "pitch": -2.1,
+                    "yaw": 180,
+                    "type": "scene",
+                     "cssClass": "directionArrow",
+                    "text": "To Lower Campus",
+                    "sceneId": "pano1"
+                },
+                {
+                //allie v. douglas puzzle
+                "pitch": 0,
+                "yaw": -60,
+                "type": "info",
+               "cssClass": "hotspotPuzzleImage",
+               "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "imageModal",
+                "text":"Solve the puzzle, and enter the password in your card inventory"
+                },
+               
            		{
                 "pitch": 0.9,
                 "yaw": 144.4,

@@ -51,25 +51,41 @@ cursor: pointer;
 
 .hotspot{
     height: 200px;
-    width: 250px;
-    background: #f00;
-    background-image:url("images/caticon.png");
+   width: 250px;
+   background: #f00;
+   background-image:url("images/caticon.png");
+}
+.welcomeHotspot{
+    height: 250px;
+   width: 250px;
+   background-image:url("images/martlet_sphere_250px.png");
+}
+
+.directionArrow{
+   height: 75px;
+   width: 75px;
+   background-image:url("images/noun_up_75px.png");
+}
+.cardPuzzle{
+   height: 278px;
+   width: 200px;
+   background-image:url("images/card_locked.png");
 }
 
 .hotspotPuzzleImage{
-    height: 200px;
-    width: 250px;
-    background: #f00;
-    background-image:url("images/allie_douglas_puzzle.jpg");
+   height: 278px;
+   width: 200px;
+   background: #f00;
+   background-image:url("images/card_locked.png");
 }
 
 /* keyframes */
 @-webkit-keyframes zoomIn{
-    from { -webkit-transform:scale(0)}
-    to {-webkit-transform:scale(1)}
+   from { -webkit-transform:scale(0)}
+   to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom{
-    from{transform:scale(0)}
-    to{transform:scale(1)}
+   from{transform:scale(0)}
+   to{transform:scale(1)}
 }
