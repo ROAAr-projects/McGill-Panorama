@@ -27,7 +27,7 @@
     const brush = new PIXI.Graphics();
     brush.position.set(0,0);
     brush.beginFill(0xffffff);
-    //brush.drawCircle(0, 0, 50);
+    brush.drawCircle(0, 0, 12);
     brush.endFill();
 
     const sprite = PIXI.Sprite.from('images/caticon.png');
@@ -72,11 +72,7 @@
 
     function pointerMove(event) {
         if (dragging) {
-            //brush.position.copyFrom(event.data.global);
-             brush.beginFill(0xffffff);
-             brush.drawCircle(event.data.global.x, event.data.global.y, 12);
-             brush.endFill();
-            app.renderer.render(brush, renderTexture, false, null, false);
+            brush.position.copyFrom(event.data.global);
         }
     }
 
