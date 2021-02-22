@@ -10,12 +10,12 @@ pannellum.viewer('panorama', {
             "title": "Lower Campus",
             "author": "McGill Library",
             "hfov": 300,
-            "yaw": 10,
+            "yaw": 20,
             "autoLoad": true,
-            "horizonRoll": -2,//added to correct non-level panorama
+            "horizonRoll": -2.5,//added to correct non-level panorama
             "compass": true,
             "type": "equirectangular",
-            "panorama": "https://i.imgur.com/wtVV2ZA.jpeg",
+            "panorama": "https://i.imgur.com/oSC3BEj.jpg",
             "hotSpots": [
                {//i want this 'welcomHotspot' with the image of the martlet to appear in the bottom left of every landing view. I want an info box to appear on click. How do we make that happen?
                     "pitch": -15,
@@ -92,7 +92,7 @@ pannellum.viewer('panorama', {
             ]
         },
         "pano2": {
-            "title": "Molson Arena",
+            "title": "Molson Stadium",
             "author": "McGill Library",
             "hfov": 300,
             "pitch": -3,
@@ -120,13 +120,16 @@ pannellum.viewer('panorama', {
                     "text": "To Birks Reading Room",
                     "sceneId": "pano3"
                 },
-                {
-                    "pitch": 14.1,
-                    "yaw": 1.5,
-                    "type": "info",
-                    "URL": "https://google.com",
-                    "text":"Puzzle me this"
-                },
+            	{
+                //holding spot for Compare puzzle TODO: change cssClass name as well as css class above in <style> </style>
+                "pitch": 14.1,
+                "yaw": 60,
+                "type": "info",
+               "cssClass": "hotspotPuzzleImage",
+               "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "imageModalCompare",
+                "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
+            },
                 {
                     "pitch": 9.4,
                     "yaw": 22.6,
