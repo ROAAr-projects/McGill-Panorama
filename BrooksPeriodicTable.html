@@ -4,15 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
-  background: rgba(138,143,156, 0.7);
+  background: rgba(138,143,156, 0.8);
 }
 #img-zoomer-box {
   width: 750px;
-  height: 100%;
+  height: auto;
   position: relative;
   margin-top: 20px;
-  margin-left: 20%;
-  Float: left;
+  margin-left: 2%;
+  float: left;
 }
 
 #img1 {
@@ -31,8 +31,8 @@ body {
 #img2 {
   width: 340px;
   height: 340px;
-  background: url('images/PR011319-compare.jpg') no-repeat  ;
-  box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
+  background: url('images/periodicTable.jpg') no-repeat  ;
+  box-shadow: 0 5px 10px -2px rgba(0,0,0,0.5);
   pointer-events: none;
   position: absolute;
   opacity: 0;
@@ -48,16 +48,37 @@ width: 500px;
   margin-left: 5%;
   margin-top: 20px;
   font-size:120%; 
-  text-align:center}
+  text-align:left;
+  }
 </style>
-</style>
+
 </head>
 <body>
 <div id="textBlock">
- <p style="font-size:120%;"> Spot all of the differences between these two scenes. <br> In each one is a hidden letter. Find all 6 to unscramble the password and unlock this card! <br> This montage dates from 1874 and shows the first first football game played at McGill.</p>
-
-<div id="img-zoomer-box">
-  <img id="img1"  src="images/PR011319-compare.jpg">
+ <h3> Find the right elements in the periodic table using the
+ clues below. Combine the elements’ symbols to find 
+the password. </h3>
+<p>
+1. I am a solid, reactive-nonmetal. I weigh about twice the 
+atomic weight of oxygen and I sit above a famous poisonous 
+metalloid.
+<br>
+2. I sit really close to Superman’s worst enemy. I am gassy but
+ noble. I sit below a very luminous element.
+<br>
+3. Fourth column, look for 2-8-10-2.
+<br>
+4. Look for a famous tech valley in california. Move four 
+elements to the right. The element you are looking for is the
+ only other gas in that row.
+<br>
+5. I am named after a famous scientist. I am a solid, 
+radioactive actinide next to a metal with an unknown state.
+</p>
+ </div>
+ 
+ <div id="img-zoomer-box">
+  <img id="img1"  src="images/periodicTable.jpg">
   <div id="img2"></div>
 </div>
 

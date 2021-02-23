@@ -23,8 +23,6 @@ pannellum.viewer('panorama', {
                     "type": "info",
                     "cssClass": "welcomeHotspot",
                     "text": "Welcome to McGill's Lower Campus. Here you see the Arts Building, but click and drag and you'll see the path to other places to explore on Campus. Go left for the Redpath Museum, or go right to make your way to Birks Library and the Molson Stadium."
-                    
-                    
                 },
                 {
                     "pitch": -0.6,
@@ -77,16 +75,6 @@ pannellum.viewer('panorama', {
                     "clickHandlerFunc": playAudio,
                     "clickHandlerArgs": "sound1",
                     "text":"audio1"
-            },
-            {
-                //hotspot of the poster. TODO: change cssClass name as well as css class above in <style> </style>
-                "pitch": 0,
-                "yaw": -60,
-                "type": "info",
-               "cssClass": "hotspot",
-               "clickHandlerFunc": openWindowFunc,
-                "clickHandlerArgs": "imageModalCompare",
-                "text":"this is a poster"
             }
            
             ]
@@ -101,7 +89,7 @@ pannellum.viewer('panorama', {
             "autoLoad": true,
             "type": "equirectangular",
             //image of the panorama
-           "panorama": "https://i.imgur.com/SQnSsQt.jpeg",//updated pano to bw image
+           "panorama": "https://i.imgur.com/SQnSsQt.jpeg",
             //the list of hotspots belonging to this specific hotspot
             "hotSpots": [
                 {
@@ -120,8 +108,7 @@ pannellum.viewer('panorama', {
                     "text": "To Birks Reading Room",
                     "sceneId": "pano3"
                 },
-            	{
-                //holding spot for Compare puzzle TODO: change cssClass name as well as css class above in <style> </style>
+            	{//phil map Puzzle
                 "pitch": 14.1,
                 "yaw": 60,
                 "type": "info",
@@ -131,12 +118,16 @@ pannellum.viewer('panorama', {
                 "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
             },
                 {
-                    "pitch": 9.4,
-                    "yaw": 22.6,
-                    "type": "info",
-                    "URL": "https://google.com",
-                    "text":"hotspot 2"
-                },
+                //Daniel Compare Puzzle
+                "pitch": 0,
+                "yaw": -60,
+                "type": "info",
+               "cssClass": "hotspotPuzzleImage",
+               "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "imageModalCompare",
+                "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
+            },
+                
                 {
                     "pitch": 9.4,
                     "yaw": 102.6,
@@ -210,7 +201,6 @@ pannellum.viewer('panorama', {
             "yaw": 5,
             "compass": true,
             "type": "equirectangular",
-           
             "panorama": "https://i.imgur.com/s5RrK6d.jpeg",
             "hotSpots": [
                 {
@@ -257,7 +247,6 @@ pannellum.viewer('panorama', {
             "compass": true,
             "autoload": true,
             "type": "equirectangular",
-           
             "panorama": "https://i.imgur.com/AAeUIbl.jpeg",
             "hotSpots": [
             
@@ -270,7 +259,7 @@ pannellum.viewer('panorama', {
                     "sceneId": "pano1"
                 },
                 {
-                //allie v. douglas puzzle
+                //Vibert douglas puzzle
                 "pitch": 0,
                 "yaw": -60,
                 "type": "info",
@@ -279,6 +268,16 @@ pannellum.viewer('panorama', {
                 "clickHandlerArgs": "imageModal",
                 "text":"Solve the puzzle, and enter the password in your card inventory"
                 },
+                {
+                //Harriet Brooks puzzle
+                "pitch": 0,
+                "yaw": -60,
+                "type": "info",
+               "cssClass": "hotspotPuzzleImage",
+               "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalBrooksPuzzle",
+                "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
+            },
                
            		{
                 "pitch": 0.9,
@@ -299,12 +298,15 @@ var modal  = document.getElementById("myModal");
 var modalImage = document.getElementById("imageModal");
 var modalImageCompare = document.getElementById("imageModalCompare");
 var modalPhilMap = document.getElementById("modalPhilMap");
+var modalBrooksPuzzle = document.getElementById("modalBrooksPuzzle");
 
 //close buttons
 var span = document.getElementsByClassName("close")[0];
 var spanImage = document.getElementsByClassName("close1")[0];
 var spanImage2 = document.getElementsByClassName("close2")[0];
 var spanPhilClose = document.getElementsByClassName("close3") [0];
+var spanBrooksClose = document.getElementsByClassName("close4") [0];
+
 
 //audio
 var audio1 = document.getElementById("audio");
@@ -347,6 +349,9 @@ spanPhilClose.onclick = function(){
     modalPhilMap.style.display = "none";
 }
 
+spanBrooksClose.onclick = function(){
+    modalBrooksPuzzle.style.display = "none";
+}
 
 
 //function that checks for a password, enters a new site once enabled

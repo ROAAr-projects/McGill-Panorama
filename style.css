@@ -30,7 +30,7 @@ padding: 20px;
 }
     
 /* The Close Button */
-.close, .close1, .close2, .close3 {
+.close, .close1, .close2, .close3, .close4 {
 color: #ed1b2f;
 float: left;
 font-size: 80px;
@@ -44,7 +44,9 @@ font-weight: bold;
 .close2:hover,
 .close2:focus,
 .close3:hover,
-.close3:focus{
+.close3:focus,
+.close4:hover,
+.close4:focus{
 color: #aaa;
 text-decoration: none;
 cursor: pointer;

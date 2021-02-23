@@ -11,6 +11,7 @@
 
 <div id="panorama"></div>
 <!--audio files-->
+  
     <audio id = "audio">
         <source src = "sounds/lofi.mp3" type="audio/mp3">
         <source src = "sounds/lofi.ogg" type="audio/ogg">
@@ -30,19 +31,16 @@
 <!-- image popup-->
 <div id = "imageModal" class="modal">
     <span class="close1">&times;</span>
-    <img src="images/allie_douglas_puze.jpg" class="modal-content" 
+    <img src="images/allie_douglas_puzzle.jpg" class="modal-content" 
     style="width:80%;height:100%;margin-left:auto; margin-right:auto">
 </div>
-
 <div id = "imageModalCompare" class="modal">
     <span class="close2">&times;</span>
-    <div class = "magnify" style="margin-left:18%; padding:10px;">
+    <div class = "magnify" style="margin-left:18%; padding:10px; height:100% width: 100%">
         <iframe src="magnifyingGlass.html" class="magnifyFrame"
         name="targetframe" allowTransparency="false" scrolling="no"
                 frameBorder="0"> </iframe>
     </div> 
-    
-
 </div>
 <div id = "modalPhilMap" class="modal">
     <span class="close3">&times;</span>
@@ -50,8 +48,16 @@
         <iframe src="drawOnMap.html" class="magnifyFrame"
         name="targetframe" allowTransparency="false" scrolling="no"
                 frameBorder="0"> </iframe>
-                </div> 
-                </div>
+    </div> 
+ </div>
+<div id = "modalBrooksPuzzle" class="modal">
+    <span class="close4">&times;</span>
+    <div class = "magnify" style="margin-left:18%; padding:10px;">
+        <iframe src="BrooksPeriodicTable.html" class="magnifyFrame"
+        name="targetframe" allowTransparency="false" scrolling="no"
+                frameBorder="0"> </iframe>
+    </div> 
+ </div>
                 
 <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
