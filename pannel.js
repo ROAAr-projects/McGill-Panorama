@@ -127,7 +127,7 @@ pannellum.viewer('panorama', {
                 "type": "info",
                "cssClass": "hotspotPuzzleImage",
                "clickHandlerFunc": openWindowFunc,
-                "clickHandlerArgs": "imageModalCompare",
+                "clickHandlerArgs": "modalPhilMap",
                 "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
             },
                 {
@@ -298,11 +298,13 @@ pannellum.viewer('panorama', {
 var modal  = document.getElementById("myModal");
 var modalImage = document.getElementById("imageModal");
 var modalImageCompare = document.getElementById("imageModalCompare");
+var modalPhilMap = document.getElementById("modalPhilMap");
 
 //close buttons
 var span = document.getElementsByClassName("close")[0];
 var spanImage = document.getElementsByClassName("close1")[0];
 var spanImage2 = document.getElementsByClassName("close2")[0];
+var spanPhilClose = document.getElementsByClassName("close3") [0];
 
 //audio
 var audio1 = document.getElementById("audio");
@@ -339,6 +341,10 @@ spanImage.onclick = function(){
 
 spanImage2.onclick = function(){
     modalImageCompare.style.display = "none";
+}
+
+spanPhilClose.onclick = function(){
+    modalPhilMap.style.display = "none";
 }
 
 
