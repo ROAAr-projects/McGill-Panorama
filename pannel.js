@@ -100,14 +100,14 @@ pannellum.viewer('panorama', {
                     "text": "To Lower Campus",
                     "sceneId": "pano1"
                 },
-                {
+                /*commented out bc i don't think we need it{
                     "pitch": -2.1,
                     "yaw": 15,
                     "type": "scene",
                     "cssClass": "directionArrow",
                     "text": "To Birks Reading Room",
                     "sceneId": "pano3"
-                },
+                },*/
             	{//phil map Puzzle
                 "pitch": 14.1,
                 "yaw": 60,
@@ -155,7 +155,7 @@ pannellum.viewer('panorama', {
             "panorama": "https://i.imgur.com/8IdaXtl.jpeg",
             "hotSpots": [
                 /*
-                 I don't think we necessarily need this scene link. {
+                 I don't think we need this scene link. {
                     "pitch": -0.6,
                     "yaw": 37.1,
                     "type": "scene",
@@ -165,7 +165,7 @@ pannellum.viewer('panorama', {
                     "targetYaw": -23,
                     "targetPitch": 2
                 },*/
-                {//need to set position and icon
+                {
                     "pitch": -2.1,
                     "yaw": 45,
                     "type": "scene",
@@ -230,13 +230,15 @@ pannellum.viewer('panorama', {
                     "text": "To Birks Reading Room",
                     "sceneId": "pano3"
                 },
-           		{
-                "pitch": 0.9,
-                "yaw": 144.4,
+           		{//beryl jigsaw puzzle
+                "pitch": 0,
+                "yaw": 180,
                 "type": "info",
-                "URL": "https://google.com",
-                "text":"hotspot 3"
-           		},
+                "cssClass": "hotspotPuzzleImage",
+               "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalMyJigsaw",
+                "text":"Solve the puzzle, and enter the password in your card inventory"
+            },
             ]
         },
          "pano5": {
@@ -299,6 +301,7 @@ var modalImage = document.getElementById("imageModal");
 var modalImageCompare = document.getElementById("imageModalCompare");
 var modalPhilMap = document.getElementById("modalPhilMap");
 var modalBrooksPuzzle = document.getElementById("modalBrooksPuzzle");
+var modalMyJigsaw = document.getElementById("modalMyJigsaw");
 
 //close buttons
 var span = document.getElementsByClassName("close")[0];
@@ -306,7 +309,7 @@ var spanImage = document.getElementsByClassName("close1")[0];
 var spanImage2 = document.getElementsByClassName("close2")[0];
 var spanPhilClose = document.getElementsByClassName("close3") [0];
 var spanBrooksClose = document.getElementsByClassName("close4") [0];
-
+var spanJigsawClose = document.getElementsByClassName("close5") [0];
 
 //audio
 var audio1 = document.getElementById("audio");
@@ -351,6 +354,9 @@ spanPhilClose.onclick = function(){
 
 spanBrooksClose.onclick = function(){
     modalBrooksPuzzle.style.display = "none";
+}
+spanJigsawClose.onclick = function(){
+    modalMyJigsaw.style.display = "none";
 }
 
 
