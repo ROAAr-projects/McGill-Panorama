@@ -17,11 +17,12 @@ pannellum.viewer('panorama', {
             "type": "equirectangular",
             "panorama": "https://i.imgur.com/oSC3BEj.jpg",
             "hotSpots": [
-               {//i want this 'welcomHotspot' with the image of the martlet to appear in the bottom left of every landing view. I want an info box to appear on click. How do we make that happen?
-                    "pitch": -15,
+               {//welcome hotspot - sound works. 
                     "yaw": -30,
                     "type": "info",
                     "cssClass": "welcomeHotspot",
+                    "clickHandlerFunc": playAudio,
+                    "clickHandlerArgs": "lowerWelcomeAudio",
                     "text": "Welcome to McGill's Lower Campus. Here you see the Arts Building, but click and drag and you'll see the path to other places to explore on Campus. Go left for the Redpath Museum, or go right to make your way to Birks Library and the Molson Stadium."
                 },
                 {
@@ -60,14 +61,6 @@ pannellum.viewer('panorama', {
                     "text": "To Redpath Museum",
                     "sceneId": "pano5"
                 },
-                
-            {
-                "pitch": 14.1,
-                "yaw": 1.5,
-                "type": "info",
-                "URL": "https://google.com",
-                "text":"hotspot1"
-            },                
             {
                     "pitch": 5,
                     "yaw": 200,
@@ -280,6 +273,15 @@ pannellum.viewer('panorama', {
                 "clickHandlerArgs": "modalBrooksPuzzle",
                 "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
             },
+            {//'welcomHotspot' with the image of the martlet to appear in the bottom left of every landing view. I want an info box to appear on click. How do we make that happen?
+                    "pitch": -15,
+                    "yaw": -30,
+                    "type": "info",
+                    "cssClass": "welcomeHotspot",
+                    "clickHandlerFunc": playAudio,
+                    "clickHandlerArgs": "redpathAudio",
+                    "text": "Welcome to Redpath Museum"
+                },
                
            		{
                 "pitch": 0.9,
@@ -313,6 +315,9 @@ var spanJigsawClose = document.getElementsByClassName("close5") [0];
 
 //audio
 var audio1 = document.getElementById("audio");
+var lowerWelcomeAudio = document.getElementById("lowerWelcomeAudio");
+var redpathAudio = document.getElementById("RedpathAudio");
+
 var a1IsPlaying = false;
 
 //function to play audio
