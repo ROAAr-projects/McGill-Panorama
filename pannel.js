@@ -278,7 +278,7 @@ pannellum.viewer('panorama', {
                     "yaw": -30,
                     "type": "info",
                     "cssClass": "welcomeHotspot",
-                    "clickHandlerFunc": playAudio,
+                    "clickHandlerFunc": playAudioMuseum,
                     "clickHandlerArgs": "redpathAudio",
                     "text": "Welcome to Redpath Museum"
                 },
@@ -315,10 +315,11 @@ var spanJigsawClose = document.getElementsByClassName("close5") [0];
 
 //audio
 var audio1 = document.getElementById("audio");
-var lowerWelcomeAudio = document.getElementById("lowerWelcomeAudio");
-var redpathAudio = document.getElementById("RedpathAudio");
+//var lowerWelcomeAudio = document.getElementById("lowerWelcomeAudio");
+var redpathAudio = document.getElementById("redpathAudio");
 
 var a1IsPlaying = false;
+var museumAudioIsPlay = false;
 
 //function to play audio
 function playAudio(hotspotDiv, args){
@@ -326,8 +327,18 @@ function playAudio(hotspotDiv, args){
         audio.pause();
         a1IsPlaying = false;
     } else{
-        audio.play();
-        a1IsPlaying = true;
+       audio.play();
+       a1IsPlaying = true;
+    }
+}
+
+function playAudioMuseum(hotspotDiv, args){
+    if(museumAudioIsPlay){
+        redpathAudio.pause();
+        museumAudioIsPlay = false;
+    } else{
+        redpathAudio.play();
+        museumAudioIsPlay = true;
     }
 }
 

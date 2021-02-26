@@ -3,97 +3,101 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body {
-  background: rgba(138,143,156, 0.7);
-}
-#img-zoomer-box {
-  width: 750px;
-  height: 100%;
-  position: relative;
-  margin-top: 20px;
-  margin-left: 20%;
+  body {
+    background: rgba(138,143,156, 0.7);
+    overflow-y: scroll;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+  }
+  body::-webkit-scrollbar{
+    display:none;
+  }
+  #img-zoomed {
+    width: 750px;
+    height: 100%;
+    cursor:none;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20%;
+    Float: left;
+  }
+
+  #originalImage {
+    width: 750px;
+    height: auto;
+  }
+
+  #img-zoomed:hover, #img-zoomer-box:active {
+    cursor: zoom-in;
+    cursor:none;
+  }
+
+  #img-zoomed:hover #glass, 
+  #img-zoomed:active #glass {
+    opacity: 1;
+  }
+  #glass {
+    width: 340px;
+    height: 340px;
+    background: url('images/PR011319-compare.jpg') no-repeat  ;
+    pointer-events: none;
+    position: absolute;
+    opacity: 0;
+    border: 10px solid black;
+    z-index: 99;
+    border-radius: 100%;
+    display: block;
+    transition: opacity 0.5s;
+  }
+  #textBlock{
   Float: left;
-}
-
-#img1 {
-  width: 750px;
-  height: auto;
-}
-
-#img-zoomer-box:hover, #img-zoomer-box:active {
-  cursor: zoom-in;
-  display: block;
-}
-
-#img-zoomer-box:hover #img2, #img-zoomer-box:active #img2 {
-  opacity: 1;
-}
-#img2 {
-  width: 340px;
-  height: 340px;
-  background: url('images/PR011319-compare.jpg') no-repeat  ;
-  box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
-  pointer-events: none;
-  position: absolute;
-  opacity: 0;
-  border: 4px solid whitesmoke;
-  z-index: 99;
-  border-radius: 100%;
-  display: block;
-  transition: opacity .2s;
-}
-#textBlock{
-Float: left;
-width: 500px;
-  margin-left: 5%;
-  margin-top: 20px;
-  font-size:120%; 
-  text-align:center}
-</style>
+  width: 500px;
+    margin-left: 30%;
+    margin-top: 20px;
+    font-size:120%; 
+    text-align:center
+    }
 </style>
 </head>
+
 <body>
 <div id="textBlock">
  <p style="font-size:120%;"> Spot all of the differences between these two scenes. <br> In each one is a hidden letter. Find all 6 to unscramble the password and unlock this card! <br> This montage dates from 1874 and shows the first first football game played at McGill.</p>
-
-<div id="img-zoomer-box">
-  <img id="img1"  src="images/PR011319-compare.jpg">
-  <div id="img2"></div>
+</div>
+<div id="img-zoomed">
+  <img id="originalImage"  src="images/PR011319-compare.jpg">
+  <div id="glass"></div>
 </div>
 
 
 
 
 <script>
-  var zoomer = function (){
-  document.getElementById('img-zoomer-box')
-    .addEventListener('mousemove', function(e) {
-
-    var original = document.getElementById('img1'),
-        magnified = document.getElementById('img2'),
+  var zoom = function (){
+  document.getElementById('img-zoomed').addEventListener('mousemove', function(e) {
+    var original = document.getElementById('originalImage'),
+        magnified = document.getElementById('glass'),
         style = magnified.style,
         x = e.pageX - this.offsetLeft,
         y = e.pageY - this.offsetTop,
         imgWidth = original.width,
         imgHeight = original.height,
-        xperc = ((x/imgWidth) * 100),
-        yperc = ((y/imgHeight) * 100);
+        xZoomPos = ((x/imgWidth) * 100),
+        yZoomPos = ((y/imgHeight) * 100);
 
-    if(x > (.01 * imgWidth)) {
-      xperc += (.15 * xperc);
-    };//lets user scroll past right edge of image
+        if(x > (.01 * imgWidth)) {
+          xZoomPos += (.15 * xZoomPos);
+        };
+        if(y >= (.01 * imgHeight)) {
+          yZoomPos += (.15 * yZoomPos);
+        };
 
-    if(y >= (.01 * imgHeight)) {
-      yperc += (.15 * yperc);
-    };//lets user scroll past bottom edge of image
-
-    style.backgroundPositionX = (xperc - 9) + '%';
-    style.backgroundPositionY = (yperc - 9) + '%';
-
+    style.backgroundPositionX = (xZoomPos - 9) + '%';
+    style.backgroundPositionY = (yZoomPos - 9) + '%';
     style.left = (x - 180) + 'px';
     style.top = (y - 180) + 'px';
-
-  }, false);
+    }, 
+    false); 
 }();
 
 </script>
