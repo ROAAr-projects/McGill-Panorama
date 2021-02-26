@@ -30,7 +30,7 @@ background-color: rgba(0,0,0,0.5);
 
 .modal-content {
 margin: auto; 
-width: 60%;
+width: 80%;
 height: 100%;
 margin-left: auto;
 padding: 20px;
@@ -38,11 +38,12 @@ padding: 20px;
 }
     
 /* The Close Button */
-.close, .close1, .close2, .close3, .close4, close5 {
+.close, .close1, .close2, .close3, .close4, .close5, .close6 {
 color: #ed1b2f;
 float: left;
 font-size: 80px;
 font-weight: bold;
+Margin-left:50px;
 }
 
 .close:hover,
@@ -57,6 +58,8 @@ font-weight: bold;
 .close4:focus,
 .close5:hover,
 .close5:focus,
+.close6:hover,
+.close6:focus,
 {
 color: #aaa;
 text-decoration: none;
@@ -83,9 +86,9 @@ cursor: pointer;
    background-image:url("images/caticon.png");
 }
 .welcomeHotspot{
-    height: 250px;
-   width: 250px;
-   background-image:url("images/martlet_sphere_250px.png");
+    height: 200px;
+   width: 200px;
+   background-image:url("images/martlet_sphere_200px.png");
 }
 
 .directionArrow{
@@ -93,17 +96,17 @@ cursor: pointer;
    width: 75px;
    background-image:url("images/noun_up_75px.png");
 }
-.cardPuzzle{
-   height: 278px;
-   width: 200px;
-   background-image:url("images/card_locked.png");
-}
 
 .hotspotPuzzleImage{
-   height: 278px;
-   width: 200px;
-   background: #f00;
+   height: 208px;
+   width: 150px;
    background-image:url("images/card_locked.png");
+}
+.easterEgg1{
+  height: 190px;
+  width: 140px;
+   background-image:url("images/PR023025.jpg");
+
 }
 
 /* keyframes */

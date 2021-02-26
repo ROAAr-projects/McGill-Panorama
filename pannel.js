@@ -10,7 +10,7 @@ pannellum.viewer('panorama', {
             "title": "Lower Campus",
             "author": "McGill Library",
             "hfov": 300,
-            "yaw": 20,
+            "yaw": 15,
             "autoLoad": true,
             "horizonRoll": -2.5,//added to correct non-level panorama
             "compass": true,
@@ -93,6 +93,15 @@ pannellum.viewer('panorama', {
                     "text": "To Lower Campus",
                     "sceneId": "pano1"
                 },
+                  {//welcome hotspot birks
+                    "yaw": -2.1,
+                    "pitch": 0,
+                    "type": "info",
+                    "cssClass": "welcomeHotspot",
+                    "clickHandlerFunc": playMolsonAudio,
+                    "clickHandlerArgs": "molsonAudio",
+                    "text": "Welcome to Molson Stadium",
+                },
                 /*commented out bc i don't think we need it{
                     "pitch": -2.1,
                     "yaw": 15,
@@ -158,6 +167,15 @@ pannellum.viewer('panorama', {
                     "targetYaw": -23,
                     "targetPitch": 2
                 },*/
+                {//welcome hotspot birks
+                    "yaw": -2.1,
+                    "pitch": 0,
+                    "type": "info",
+                    "cssClass": "welcomeHotspot",
+                    "clickHandlerFunc": playBirksAudio,
+                    "clickHandlerArgs": "birksAudio",
+                    "text": "Welcome to Birks Reading Room",
+                },
                 {
                     "pitch": -2.1,
                     "yaw": 45,
@@ -167,7 +185,7 @@ pannellum.viewer('panorama', {
                     "sceneId": "pano1"
                 },
                 {
-                //Rosemary Brown puzzle
+                //Rosemary Brown puzzle - needs to be created. Right now this is linking to image model for vibert douglas puzzle
                 "pitch": 0,
                 "yaw": -60,
                 "type": "info",
@@ -176,6 +194,15 @@ pannellum.viewer('panorama', {
                 "clickHandlerArgs": "imageModal",
                 "text":"Solve the puzzle, and enter the password in your card inventory"
                 },
+                {//easter egg1
+                "pitch": 0.9,
+                "yaw": 150,
+                "type": "info",
+                "cssClass": "easterEgg1",
+                 "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalEgg1",
+                "text":"Birk's Chapel"
+           		},
            		
            		{
                 "pitch": 0.9,
@@ -196,6 +223,25 @@ pannellum.viewer('panorama', {
             "type": "equirectangular",
             "panorama": "https://i.imgur.com/s5RrK6d.jpeg",
             "hotSpots": [
+                {//welcome hotspot  
+                    "yaw": -2.1,
+                    "pitch": -30,
+                    "type": "info",
+                    "cssClass": "welcomeHotspot",
+                    "clickHandlerFunc": playMoyseAudio,
+                    "clickHandlerArgs": "moyseAudio",
+                    "text": "Welcome to Moyse Hall",
+                },
+                
+                {
+                    "pitch": -2.1,
+                    "yaw": 0,
+                    "type": "scene",
+                     "cssClass": "directionArrow",
+                    "text": "To Lower Campus",
+                    "sceneId": "pano1"
+                },
+                /*directional hotspots not necessarily needed, but save for re-deployment if beta testing suggests they should be there.
                 {
                     "pitch": -8,
                     "yaw": 75,
@@ -206,14 +252,6 @@ pannellum.viewer('panorama', {
                     "targetYaw": -23,
                     "targetPitch": 2
                 },
-                {
-                    "pitch": -2.1,
-                    "yaw": 0,
-                    "type": "scene",
-                     "cssClass": "directionArrow",
-                    "text": "To Lower Campus",
-                    "sceneId": "pano1"
-                },
             
                  {
                     "pitch": -8,
@@ -222,16 +260,33 @@ pannellum.viewer('panorama', {
                      "cssClass": "directionArrow",
                     "text": "To Birks Reading Room",
                     "sceneId": "pano3"
-                },
-           		{//beryl jigsaw puzzle
-                "pitch": 0,
-                "yaw": 180,
+                },*/
+                 {//Bertha puzzle
+                "pitch": 0.9,
+                "yaw": 100,
                 "type": "info",
                 "cssClass": "hotspotPuzzleImage",
-               "clickHandlerFunc": openWindowFunc,
+                "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalMyCipher",
+                "text":"Solve the puzzle"
+           		},
+                {//beryl jigsaw external window
+                "pitch": 0.9,
+                "yaw": 200,
+                "type": "info",
+                "cssClass": "hotspotPuzzleImage",
+                "URL": "https://www.jigsawexplorer.com/online-jigsaw-puzzle-player.html?url=aHR0cHM6Ly9pLmltZ3VyLmNvbS93WXJvM3ZYLmpwZ18obm9fcHJldmlld180KV8obm9wPTUwKQ~~&cred=TWNHaWxsIExpYnJhcnk~&color=white",
+                "text":"Solve the puzzle, and find the key hidden underneath the password in the final image."
+           		},
+           	/*{//beryl jigsaw puzzle iframe option
+                "pitch": 0,
+                "yaw": 130,
+                "type": "info",
+                "cssClass": "hotspotPuzzleImage",
+                "clickHandlerFunc": openWindowFunc,
                 "clickHandlerArgs": "modalMyJigsaw",
                 "text":"Solve the puzzle, and enter the password in your card inventory"
-            },
+            },*/
             ]
         },
          "pano5": {
@@ -273,7 +328,7 @@ pannellum.viewer('panorama', {
                 "clickHandlerArgs": "modalBrooksPuzzle",
                 "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
             },
-            {//'welcomHotspot' with the image of the martlet to appear in the bottom left of every landing view. I want an info box to appear on click. How do we make that happen?
+            {//'welcomeHotspot' with the image of the martlet to appear in the bottom left of every landing view. I want an info box to appear on click. How do we make that happen?
                     "pitch": -15,
                     "yaw": -30,
                     "type": "info",
@@ -304,6 +359,9 @@ var modalImageCompare = document.getElementById("imageModalCompare");
 var modalPhilMap = document.getElementById("modalPhilMap");
 var modalBrooksPuzzle = document.getElementById("modalBrooksPuzzle");
 var modalMyJigsaw = document.getElementById("modalMyJigsaw");
+var modalMyCipher = document.getElementById("modalMyCipher");
+var modalEgg1 = document.getElementById("modalEgg1");
+
 
 //close buttons
 var span = document.getElementsByClassName("close")[0];
@@ -312,14 +370,28 @@ var spanImage2 = document.getElementsByClassName("close2")[0];
 var spanPhilClose = document.getElementsByClassName("close3") [0];
 var spanBrooksClose = document.getElementsByClassName("close4") [0];
 var spanJigsawClose = document.getElementsByClassName("close5") [0];
+var spanCipherClose = document.getElementsByClassName("close6") [0];
+var spanEgg1Close = document.getElementsByClassName("close7") [0];
+
 
 //audio
 var audio1 = document.getElementById("audio");
 //var lowerWelcomeAudio = document.getElementById("lowerWelcomeAudio");
 var redpathAudio = document.getElementById("redpathAudio");
+var moyseAudio = document.getElementById("moyseAudio");
+var molsonAudio = document.getElementById("molsonAudio");
+var birksAudio = document.getElementById("birksAudio");
+
+
+
 
 var a1IsPlaying = false;
 var museumAudioIsPlay = false;
+var moyseAudioIsPlay = false;
+var molsonAudioIsPlay = false;
+var birksAudioIsPlay = false;
+
+
 
 //function to play audio
 function playAudio(hotspotDiv, args){
@@ -341,6 +413,37 @@ function playAudioMuseum(hotspotDiv, args){
         museumAudioIsPlay = true;
     }
 }
+
+function playMoyseAudio(hotspotDiv, args){
+    if(moyseAudioIsPlay){
+        moyseAudio.pause();
+       moyseAudioIsPlay = false;
+    } else{
+        moyseAudio.play();
+        moyseAudioIsPlay = true;
+    }
+}
+
+function playMolsonAudio(hotspotDiv, args){
+    if(molsonAudioIsPlay){
+        molsonAudio.pause();
+       molsonAudioIsPlay = false;
+    } else{
+        molsonAudio.play();
+        molsonAudioIsPlay = true;
+    }
+}
+
+function playBirksAudio(hotspotDiv, args){
+    if(birksAudioIsPlay){
+        birksAudio.pause();
+       birksAudioIsPlay = false;
+    } else{
+        birksAudio.play();
+        birksAudioIsPlay = true;
+    }
+}
+
 
 //functions opens a modal
 function openWindowFunc(hotSpotDiv, args){
@@ -374,7 +477,12 @@ spanBrooksClose.onclick = function(){
 spanJigsawClose.onclick = function(){
     modalMyJigsaw.style.display = "none";
 }
-
+spanCipherClose.onclick = function(){
+    modalMyCipher.style.display = "none";
+}
+spanEgg1Close.onclick = function(){
+    modalEgg1.style.display = "none";
+}
 
 //function that checks for a password, enters a new site once enabled
 function passWord(hotspotDiv, args) {
