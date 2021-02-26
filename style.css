@@ -4,11 +4,13 @@
     margin: auto;
     /*margin-top: 10%; removed to minimize frame*/ 
 }
+
 body{
     background-color: black;
     overflow-y: scroll;
     -ms-overflow-style:none;
     scrollbar-width:none;
+    font-family: 'PT Sans', sans-serif;
 }
 
 body::-webkit-scrollbar{
