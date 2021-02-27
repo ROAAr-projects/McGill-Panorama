@@ -317,8 +317,8 @@ pannellum.viewer('panorama', {
                 "pitch": 0,
                 "yaw": -60,
                 "type": "info",
-               "cssClass": "hotspotPuzzleImage",
-               "clickHandlerFunc": openWindowFunc,
+                "cssClass": "hotspotPuzzleImage",
+                "clickHandlerFunc": openWindowFunc,
                 "clickHandlerArgs": "modalBrooksPuzzle",
                 "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
             },
@@ -336,8 +336,10 @@ pannellum.viewer('panorama', {
                 "pitch": 0.9,
                 "yaw": 144.4,
                 "type": "info",
-                "URL": "https://google.com",
-                "text":"hotspot 3"
+                "cssClass": "hotspotPuzzleImage",
+                "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalPotato",
+                "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
            		},
             ]
         }
