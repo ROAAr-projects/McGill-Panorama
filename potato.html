@@ -1,19 +1,268 @@
 <html>
     <head>
         <style>
+            body{
+                background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+                overflow-y: scroll;
+                -ms-overflow-style:none;
+                scrollbar-width:none;
+                font-family: 'PT Sans', sans-serif;
+            }
 
+            body::-webkit-scrollbar{
+                display: none;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: 0.2fr 2fr 1fr 2fr 1.7fr 0fr;
+                grid-template-rows: 0.4fr 0.6fr 0.2fr 2.7fr 1.2fr 0.9fr;
+                gap: 0px 0px;
+                grid-template-areas:
+                    ". Header Header Header Header ."
+                    ". Header Header Header Header ."
+                    ". . . . . ."
+                    "Scenario Scenario Canvas Canvas Canvas Description"
+                    "Scenario Scenario Canvas Canvas Canvas Description"
+                        ". . . . . .";
+                }
+                .Header { 
+                    grid-area: Header;
+                    margin-top: 20px; 
+                    margin-left: -40px;
+                    text-align: center;
+                    background: #ffffff;
+                    display:-webkit-box;
+                    display:-ms-flexbox;
+                    display:flex;
+                    justify-content:center;
+                    -ms-flex-direction:row;
+                    flex-direction:row;
+                    border-radius: 16px;
+                    -webkit-box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
+                    box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
+                }
+                .Scenario { 
+                    grid-area: Scenario;
+                    background: #ffffff;
+                    font-size: 120%;
+                    text-align: left;
+                    margin-left: 20px;
+                    display:-webkit-box;
+                    display:-ms-flexbox;
+                    display:flex;
+                    justify-content:center;
+                    -ms-flex-direction:row;
+                    flex-direction:row;
+                    border-radius: 4px;
+                    -webkit-box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
+                    box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
+                }
+                .Canvas { 
+                    grid-area: Canvas;
+                    margin-left: 100px;
+                }
+                .Description { 
+                    grid-area: Description; 
+                }
+                #puzzle{
+                    width: 1000px;
+                    height: auto;
+                }
         </style>
     </head>
 
 
     <body>
-
+        <div class="grid-container">
+            <div class="Header">
+              <h1> Plant Puzzle</h1>
+            </div>
+            <div class="Scenario">
+                  <p>  I am planting a tray of seedlings for a plant genetics experiment. 
+                <br>
+                <br>To keep away pests, I need to plant each seed next to one of its companion species. 
+                <br>
+                <br> I can not plant any of the same species side by side.  
+                <br>
+                <br>I have already planted a tomato and a potato, and you need to fill the remaining 4 spaces.
+                <br>
+                <br> Consult the companion species information below to help you.
+                <br>
+                <br> You will end up with one leftover seed, and its species is the password. </p>
+            </div>
+            <div class="Canvas" id="puzzle">
+            </div>
+            <div class="Description">
+            </div>
+        </div>
     </body>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
     <script>
 
+        var renderer = PIXI.autoDetectRenderer(1000, 800);
 
+        
+        document.getElementById("puzzle").appendChild(renderer.view);
+        var stage = new PIXI.Container();
+        
+        var textureTomato = PIXI.Texture.fromImage('images/tomato.png');
+        var texturePotato = PIXI.Texture.fromImage('images/potato.png');
+        var textureBeans = PIXI.Texture.fromImage('images/beans.png');
+        var texturePepper = PIXI.Texture.fromImage('images/pepper.png');
+
+        //background
+        var backgroundTexture = PIXI.Texture.fromImage('images/Barbara_puzzle.jpg');
+        var background = new PIXI.Sprite(backgroundTexture);
+        background.anchor.set(0);
+        background.position.y = -10;
+        background.scale.set(0.8)
+        stage.addChild(background);
+
+
+        //create icons
+        createTomato(60 , 500);
+        createPotato(160, 510);
+        createBeans(280, 500);
+        createPepper(380, 490);
+
+        function createTomato(x, y)
+        {
+            var tomato = new PIXI.Sprite(textureTomato);
+            tomato.interactive = true;
+            tomato.buttonMode = true;
+            tomato.anchor.set(0.5);
+            tomato.scale.set(0.8);         
+            tomato
+                .on('mousedown', onDragStart)
+                .on('touchstart', onDragStart)
+                .on('mouseup', onDragEnd)
+                .on('mouseupoutside', onDragEnd)
+                .on('touchend', onDragEnd)
+                .on('touchendoutside', onDragEnd)
+                .on('mousemove', onDragMove)
+                .on('touchmove', onDragMove);
+            tomato.position.x = x;
+            tomato.position.y = y;
+            stage.addChild(tomato);
+        }
+
+         function createTomato(x, y)
+        {
+            var tomato = new PIXI.Sprite(textureTomato);
+            tomato.interactive = true;
+            tomato.buttonMode = true;
+            tomato.anchor.set(0.5);
+            tomato.scale.set(0.9);         
+            tomato
+                .on('mousedown', onDragStart)
+                .on('touchstart', onDragStart)
+                .on('mouseup', onDragEnd)
+                .on('mouseupoutside', onDragEnd)
+                .on('touchend', onDragEnd)
+                .on('touchendoutside', onDragEnd)
+                .on('mousemove', onDragMove)
+                .on('touchmove', onDragMove);
+            tomato.position.x = x;
+            tomato.position.y = y;
+            stage.addChild(tomato);
+        }
+
+        function createPotato(x, y)
+        {
+            var potato = new PIXI.Sprite(texturePotato);
+            potato.interactive = true;
+            potato.buttonMode = true;
+            potato.anchor.set(0.5);
+            potato.scale.set(1.1);         
+            potato
+                .on('mousedown', onDragStart)
+                .on('touchstart', onDragStart)
+                .on('mouseup', onDragEnd)
+                .on('mouseupoutside', onDragEnd)
+                .on('touchend', onDragEnd)
+                .on('touchendoutside', onDragEnd)
+                .on('mousemove', onDragMove)
+                .on('touchmove', onDragMove);
+            potato.position.x = x;
+            potato.position.y = y;
+            stage.addChild(potato);
+        }
+
+        function createBeans(x, y)
+        {
+            var beans = new PIXI.Sprite(textureBeans);
+            beans.interactive = true;
+            beans.buttonMode = true;
+            beans.anchor.set(0.5);
+            beans.scale.set(0.9);         
+            beans
+                .on('mousedown', onDragStart)
+                .on('touchstart', onDragStart)
+                .on('mouseup', onDragEnd)
+                .on('mouseupoutside', onDragEnd)
+                .on('touchend', onDragEnd)
+                .on('touchendoutside', onDragEnd)
+                .on('mousemove', onDragMove)
+                .on('touchmove', onDragMove);
+            beans.position.x = x;
+            beans.position.y = y;
+            stage.addChild(beans);
+        }
+
+         function createPepper(x, y)
+        {
+            var pepper = new PIXI.Sprite(texturePepper);
+            pepper.interactive = true;
+            pepper.buttonMode = true;
+            pepper.anchor.set(0.5);
+            pepper.scale.set(0.8);         
+            pepper
+                .on('mousedown', onDragStart)
+                .on('touchstart', onDragStart)
+                .on('mouseup', onDragEnd)
+                .on('mouseupoutside', onDragEnd)
+                .on('touchend', onDragEnd)
+                .on('touchendoutside', onDragEnd)
+                .on('mousemove', onDragMove)
+                .on('touchmove', onDragMove);
+            pepper.position.x = x;
+            pepper.position.y = y;
+            stage.addChild(pepper);
+        }
+
+
+        requestAnimationFrame( animate );
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(stage);
+        }
+
+        function onDragStart(event)
+        {
+            this.data = event.data;
+            this.alpha = 0.8;
+            this.dragging = true;
+        }
+
+        function onDragEnd()
+        {
+            this.alpha = 1;
+            this.dragging = false;
+            this.data = null;
+        }
+
+        function onDragMove()
+        {
+            if (this.dragging)
+            {
+                var newPosition = this.data.getLocalPosition(this.parent);
+                this.position.x = newPosition.x;
+                this.position.y = newPosition.y;
+            }
+        }
     </script>
 
 </html>

@@ -3,78 +3,77 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  body {
- 
-    overflow-y: scroll;
-    -ms-overflow-style:none;
-    scrollbar-width:none;
-    font-family: 'PT Sans', sans-serif;
-  }
-  
-  body::-webkit-scrollbar{
-    display:none;
-  }
+    body {
+      overflow-y: scroll;
+      -ms-overflow-style:none;
+      scrollbar-width:none;
+      font-family: 'PT Sans', sans-serif;
+    }
+    
+    body::-webkit-scrollbar{
+      display:none;
+    }
 
-  #img-zoomed {
-    width: 750px;
-    height: 100%;
-    cursor:none;
-    position: relative;
-    margin-top: 20px;
-    margin-left: 22%;
-  }
+    #img-zoomed {
+      width: 750px;
+      height: 100%;
+      cursor:none;
+      position: relative;
+      margin-top: 20px;
+      margin-left: 22%;
+    }
 
-  #originalImage {
-    width: 750px;
-    height: auto;
-  }
+    #originalImage {
+      width: 750px;
+      height: auto;
+    }
 
-  #img-zoomed:hover, #img-zoomer-box:active {
-    cursor: zoom-in;
-    cursor:none;
-  }
+    #img-zoomed:hover, #img-zoomer-box:active {
+      cursor: zoom-in;
+      cursor:none;
+    }
 
-  #img-zoomed:hover #glass, 
-  #img-zoomed:active #glass {
-    opacity: 1;
-  }
+    #img-zoomed:hover #glass, 
+    #img-zoomed:active #glass {
+      opacity: 1;
+    }
 
-  #glass {
-    width: 340px;
-    height: 340px;
-    background: url('images/PR011319-compare.jpg') no-repeat  ;
-    pointer-events: none;
-    position: absolute;
-    opacity: 0;
-    border: 10px solid black;
-    z-index: 99;
-    border-radius: 100%;
-    display: block;
-    transition: opacity 0.5s;
-  }
+    #glass {
+      width: 340px;
+      height: 340px;
+      background: url('images/PR011319-compare.jpg') no-repeat  ;
+      pointer-events: none;
+      position: absolute;
+      opacity: 0;
+      border: 10px solid black;
+      z-index: 99;
+      border-radius: 100%;
+      display: block;
+      transition: opacity 0.5s;
+    }
 
-  #textBlock {
-    width: 500px;
-    margin-left: 30%;
-    margin-top: 20px;
-    font-size:120%; 
-    justify-content:center;
-    text-align: center;
-    background: #f6f5f3;
-    height:18em;
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
+    #textBlock {
+      width: 500px;
+      margin-left: 30%;
+      margin-top: 20px;
+      font-size:120%; 
+      justify-content:center;
+      text-align: center;
+      background: #f6f5f3;
+      height:18em;
+      display:-webkit-box;
+      display:-ms-flexbox;
+      display:flex;
 
-    -ms-flex-direction:column;
-    flex-direction:column;
+      -ms-flex-direction:column;
+      flex-direction:column;
 
-    border-radius: 8px;
+      border-radius: 8px;
 
-    -webkit-box-shadow:  15px 15px 27px #000000, -15px -15px 27px #000000;
-    box-shadow:  15px 15px 27px #000000, -15px -15px 27px #000000;
-  }
-</style>
+      -webkit-box-shadow:  15px 15px 27px #000000, -15px -15px 27px #000000;
+      box-shadow:  15px 15px 27px #000000, -15px -15px 27px #000000;
+    }
+  </style>
 </head>
 
 <body>
