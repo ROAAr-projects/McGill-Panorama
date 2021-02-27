@@ -1,3 +1,26 @@
+.grid-container {
+   display: grid;
+   grid-template-columns: 0.2fr 1.8fr 1.8fr 0.2fr;
+   grid-template-rows: 0.2fr 1.8fr 1fr;
+   gap: 0px 0px;
+   grid-template-areas:
+     "Navbar Navbar Navbar Navbar"
+     "curtain pannellum pannellum curtain2"
+     "curtain pannellum pannellum curtain2";
+ }
+ .Navbar { 
+    grid-area: Navbar; 
+   }
+ .pannellum { 
+    grid-area: pannellum; 
+   }
+ .curtain { 
+    grid-area: curtain; 
+   }
+ .curtain2 { 
+    grid-area: curtain2; 
+   }
+
 #panorama {
     width: 1200px;
     height: 800px;
