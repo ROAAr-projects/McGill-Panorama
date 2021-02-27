@@ -60,15 +60,7 @@ pannellum.viewer('panorama', {
                      "cssClass": "directionArrow",
                     "text": "To Redpath Museum",
                     "sceneId": "pano5"
-                },
-            {
-                    "pitch": 5,
-                    "yaw": 200,
-                    "type": "info",
-                    "clickHandlerFunc": playAudio,
-                    "clickHandlerArgs": "sound1",
-                    "text":"audio1"
-            }
+                }
            
             ]
         },
@@ -205,11 +197,13 @@ pannellum.viewer('panorama', {
            		},
            		
            		{
-                "pitch": 0.9,
-                "yaw": 144.4,
+                "pitch": -5,
+                "yaw": 212,
                 "type": "info",
-                "URL": "https://google.com",
-                "text":"hotspot 3"
+                "cssClass": "hotspotPuzzleImage",
+                "text":"Solve the puzzle, and enter the password in your card inventory",
+                "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalRose"
            		},
                 
             ]
@@ -360,7 +354,10 @@ var modalPhilMap = document.getElementById("modalPhilMap");
 var modalBrooksPuzzle = document.getElementById("modalBrooksPuzzle");
 var modalMyJigsaw = document.getElementById("modalMyJigsaw");
 var modalMyCipher = document.getElementById("modalMyCipher");
+var modalRose = document.getElementById("modalRose");
+var modalPotato = document.getElementById("modalPotato");
 var modalEgg1 = document.getElementById("modalEgg1");
+
 
 
 //close buttons
@@ -372,6 +369,8 @@ var spanBrooksClose = document.getElementsByClassName("close4") [0];
 var spanJigsawClose = document.getElementsByClassName("close5") [0];
 var spanCipherClose = document.getElementsByClassName("close6") [0];
 var spanEgg1Close = document.getElementsByClassName("close7") [0];
+var spanRoseClose = document.getElementsByClassName("close8")[0];
+var spanPotatoClose = document.getElementsByClassName("close9")[0];
 
 
 //audio
@@ -480,8 +479,15 @@ spanJigsawClose.onclick = function(){
 spanCipherClose.onclick = function(){
     modalMyCipher.style.display = "none";
 }
-spanEgg1Close.onclick = function(){
-    modalEgg1.style.display = "none";
+//spanEgg1Close.onclick = function(){
+//    modalEgg1.style.display = "none";
+//}
+spanRoseClose.onclick = function(){
+    modalRose.style.display = "none";
+}
+
+spanPotatoClose.onclick = function(){
+    modalPotato.style.display = "none";
 }
 
 //function that checks for a password, enters a new site once enabled

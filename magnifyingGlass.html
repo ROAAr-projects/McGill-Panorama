@@ -4,23 +4,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   body {
-    background: rgba(138,143,156, 0.7);
+ 
     overflow-y: scroll;
     -ms-overflow-style:none;
     scrollbar-width:none;
     font-family: 'PT Sans', sans-serif;
   }
+  
   body::-webkit-scrollbar{
     display:none;
   }
+
   #img-zoomed {
     width: 750px;
     height: 100%;
     cursor:none;
     position: relative;
     margin-top: 20px;
-    margin-left: 20%;
-    Float: left;
+    margin-left: 22%;
   }
 
   #originalImage {
@@ -37,6 +38,7 @@
   #img-zoomed:active #glass {
     opacity: 1;
   }
+
   #glass {
     width: 340px;
     height: 340px;
@@ -50,14 +52,28 @@
     display: block;
     transition: opacity 0.5s;
   }
-  #textBlock{
-  Float: left;
-  width: 500px;
+
+  #textBlock {
+    width: 500px;
     margin-left: 30%;
     margin-top: 20px;
     font-size:120%; 
-    text-align:center
-    }
+    justify-content:center;
+    text-align: center;
+    background: #f6f5f3;
+    height:18em;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+
+    -ms-flex-direction:column;
+    flex-direction:column;
+
+    border-radius: 8px;
+
+    -webkit-box-shadow:  15px 15px 27px #000000, -15px -15px 27px #000000;
+    box-shadow:  15px 15px 27px #000000, -15px -15px 27px #000000;
+  }
 </style>
 </head>
 

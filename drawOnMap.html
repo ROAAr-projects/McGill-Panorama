@@ -7,65 +7,115 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: rgba(138,143,156, 0.7);
+            background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
              overflow-y: scroll;
              -ms-overflow-style:none;
-            scrollbar-width:none;
+             scrollbar-width:none;
+             font-family: 'PT Sans', sans-serif;
         }
 
         .body::-webkit-scrollbar{
             display: none;
         }
+
+        h1{
+      
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 0.8fr 0.7fr 1.3fr 1.6fr;
+            grid-template-rows: 0.4fr 1.6fr 1fr;
+            gap: 0px 0px;
+            grid-template-areas:
+                "Title Title Title Title"
+                "text text canvas canvas"
+                "bot-text bot-text bot-text bot-text";
+           
+            }
+        
+        .Title{
+            grid-area: Title;
+        }
+        .text{
+            grid-area: text;
+        }
+        .canvas{
+            grid-area: canvas;
+        }
+        .bot-text{ 
+            grid-area: bot-text; 
+        }
+
         #textBlock{
-			Float: left;
 			width: 500px;
  			margin-left: 5%;
-  			
+  			margin-top: -10px;
   			font-size:120%; 
-  			text-align:left}
+  			text-align:left
+            position: absolute;
+            justify-content:left;
+            background: #fdfcfb;
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+            -ms-flex-direction:column;
+            flex-direction:column;
+            border-radius: 4px;
+            -webkit-box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
+            box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
+        }
 
+        #bottom{
+            text-align: center;
+            margin-top: 2%;
+            font-size:120%; 
+        }
+        
         #puzzle{
-            width: 2000px;
-            
+            width: 1000px;
+            height: 1000px;
+            position: absolute;
+            margin-left: 45%;
+            margin-top: 250px;
         }
     </style>
 </head>  
 <body>
-    <div>
 
-<div id="textBlock">
- <h3> “I am going for a 7k training run around campus and through Milton-Parc. Follow along with me to learn the name of my favourite event.” <br>Trace the route onto the map using your mouse cursor.</h3>
-<p>
+<div class="grid-container">
+    <div class="Title">
+        <h1> “I am going for a 7k training run around campus and through Milton-Parc.<br> Follow along with me to learn the name of my favourite event.” <br>Trace the route onto the map using your mouse cursor.</h1>
+    </div>   
+    <div id="textBlock" class="text">
+        <ol>
+        <li> Start at the corner of McTavish and Sherbrooke and head North to Pine Ave </li>
+        <li> Turn right and run straight until you see of the Royal Victoria Hospital </li>
+        <li> Turn right again and follow the curve of the reservoir until you hit McTavish again </li>
+        <li> Turn left when you get to the Presbyterian College and continue South-East across campus until you get to the corner of University and Sherbrooke </li>
+        <li> Quickly sprint to Shuter and back again, then turn North up University </li>
+        <li> Turn right on Milton and sprint to Lorne and back again </li>
+        <li> Head North to Pine, then turn right </li>
+        <li> Continue straight until Durocher, then turn right </li>
+        <li> Enjoy an easy downhill jog all the way down to Sherbrooke </li>
+        <li> Turn left on Sherbrooke and take another left turn on Park </li>
+        <li> When you get to Prince Arthur, take a right and quickly sprint to Rue Sainte-Famille and back </li>
+        <li> Head North on Park and then turn right on Pine </li>
+        <li> Turn right again on Sainte-Famille and run straight South until you hit Sherbrooke </li>
+        <li> Head East until you get to Saint Lawrence </li>
+        <li> This is the final push at the end of the run! Sprint up Saint Lawrence until you get to Pine </li>
+        <li> Now begin your cooldown by heading back South to Prince Arthur </li>
+        <li> Turn right and jog slowly until you get to Saint Urbain </li>
+        <li> Turn right again and finish by walking to the corner of Pine and Saint Urbain.  </li>
+        </ol> 
+    </div>
+    
+    <div id="puzzle" class="canvas"> </div>
 
-
- <br> 1. Start at the corner of McTavish and Sherbrooke and head North to Pine Ave
-
- <br> 2. Turn right and run straight until you see of the Royal Victoria Hospital
-
-<br> 3. Turn right again and follow the curve of the reservoir until you hit McTavish again
-<br> 4.Turn left when you get to the Presbyterian College and continue South-East across campus until you get to the corner of University and Sherbrooke
- <br> 5. Quickly sprint to Shuter and back again, then turn North up University
-  <br> 6. Turn right on Milton and sprint to Lorne and back again
-
- <br> 7. Head North to Pine, then turn right
- <br> 8. Continue straight until Durocher, then turn right
-
- <br> 9. Enjoy an easy downhill jog all the way down to Sherbrooke
- <br> 10. Turn left on Sherbrooke and take another left turn on Park
-
- <br> 11. When you get to Prince Arthur, take a right and quickly sprint to Rue Sainte-Famille and back
- <br> 12. Head North on Park and then turn right on Pine
- <br> 13. Turn right again on Sainte-Famille and run straight South until you hit Sherbrooke
- <br> 14. Head East until you get to Saint Lawrence
- <br> 15. This is the final push at the end of the run! Sprint up Saint Lawrence until you get to Pine
- <br> 16. Now begin your cooldown by heading back South to Prince Arthur
- <br> 17. Turn right and jog slowly until you get to Saint Urbain
- <br> 18. Turn right again and finish by walking to the corner of Pine and Saint Urbain.  
-<br> 
- Great Work! The word you've spelled is the password to unlock my card.
- </p> 
- </div>
-<div id="puzzle"> 
+    <div class="bot-text" id="bottom">
+        <p> <b> Great Work! The word you've spelled is the password to unlock my card. </b> </p>
+    </div>
 </div>
 </body>  
 
@@ -76,7 +126,7 @@
         autoResize: true,
         resolution: devicePixelRatio
     });
-    app.renderer.resize(800, 800);
+    app.renderer.resize(650, 600);
     document.getElementById("puzzle").appendChild(app.view);
     const { stage } = app;
 
