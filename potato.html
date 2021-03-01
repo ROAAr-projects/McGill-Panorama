@@ -85,9 +85,9 @@
                 <br>
                 <br> I can not plant any of the same species side by side.  
                 <br>
-                <br>I have already planted a tomato and a potato, and you need to fill the remaining 4 spaces.
+                <br>I have already planted a tomato and a potato, I have 5 seeds left and you need to fill the remaining 4 spaces.
                 <br>
-                <br> Consult the companion species information below to help you.
+                <br>The companion species information will help you. Drag and drop the vegetable tiles to help sort out which species is the leftover seed.
                 <br>
                 <br> You will end up with one leftover seed, and its species is the password. </p>
             </div>
@@ -110,6 +110,7 @@
         var textureTomato = PIXI.Texture.fromImage('images/tomato.png');
         var texturePotato = PIXI.Texture.fromImage('images/potato.png');
         var textureBeans = PIXI.Texture.fromImage('images/beans.png');
+        var textureBeans2 = PIXI.Texture.fromImage('images/beans.png');
         var texturePepper = PIXI.Texture.fromImage('images/pepper.png');
 
         //background
@@ -125,6 +126,7 @@
         createTomato(60 , 500);
         createPotato(160, 510);
         createBeans(280, 500);
+        createBeans2(280, 500);
         createPepper(380, 490);
 
         function createTomato(x, y)
@@ -209,6 +211,26 @@
             beans.position.x = x;
             beans.position.y = y;
             stage.addChild(beans);
+        }
+            function createBeans2(x, y)
+        {
+            var beans2 = new PIXI.Sprite(texturebeans2);
+            beans2.interactive = true;
+            beans2.buttonMode = true;
+            beans2.anchor.set(0.5);
+            beans2.scale.set(0.9);         
+            beans2
+                .on('mousedown', onDragStart)
+                .on('touchstart', onDragStart)
+                .on('mouseup', onDragEnd)
+                .on('mouseupoutside', onDragEnd)
+                .on('touchend', onDragEnd)
+                .on('touchendoutside', onDragEnd)
+                .on('mousemove', onDragMove)
+                .on('touchmove', onDragMove);
+            beans2.position.x = x;
+            beans2.position.y = y;
+            stage.addChild(beans2);
         }
 
          function createPepper(x, y)
