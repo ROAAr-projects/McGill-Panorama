@@ -85,7 +85,7 @@ pannellum.viewer('panorama', {
                     "text": "To Lower Campus",
                     "sceneId": "pano1"
                 },
-                  {//welcome hotspot birks
+                  {//welcome hotspot 
                     "yaw": -2.1,
                     "pitch": 0,
                     "type": "info",
@@ -103,8 +103,8 @@ pannellum.viewer('panorama', {
                     "sceneId": "pano3"
                 },*/
             	{//phil map Puzzle
-                "pitch": 14.1,
-                "yaw": 60,
+                "pitch":-5,
+                "yaw": 180,
                 "type": "info",
                "cssClass": "hotspotPuzzleImage",
                "clickHandlerFunc": openWindowFunc,
@@ -114,7 +114,7 @@ pannellum.viewer('panorama', {
                 {
                 //Daniel Compare Puzzle
                 "pitch": 0,
-                "yaw": -60,
+                "yaw": 60,
                 "type": "info",
                "cssClass": "hotspotPuzzleImage",
                "clickHandlerFunc": openWindowFunc,
@@ -122,7 +122,7 @@ pannellum.viewer('panorama', {
                 "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
             },
                 
-                {
+                /*extras for easter eggs{
                     "pitch": 9.4,
                     "yaw": 102.6,
                     "type": "info",
@@ -136,7 +136,7 @@ pannellum.viewer('panorama', {
                     "type": "info",
                     "clickHandlerFunc": passWord,
                     "clickHandlerArgs": "hotspot3",
-                }
+                }*/
             ]
         },    
         "pano3": {
@@ -176,19 +176,20 @@ pannellum.viewer('panorama', {
                     "text": "To Lower Campus",
                     "sceneId": "pano1"
                 },
-                {
-                //Rosemary Brown puzzle - needs to be created. Right now this is linking to image model for vibert douglas puzzle
-                "pitch": 0,
-                "yaw": -60,
-                "type": "info",
-               "cssClass": "hotspotPuzzleImage",
-               "clickHandlerFunc": openWindowFunc,
-                "clickHandlerArgs": "imageModal",
-                "text":"Solve the puzzle, and enter the password in your card inventory"
-                },
-                {//easter egg1
+             
+                {//beryl jigsaw external window
                 "pitch": 0.9,
                 "yaw": 150,
+                "type": "info",
+                "cssClass": "hotspotPuzzleImage",
+                "URL": "https://www.jigsawexplorer.com/online-jigsaw-puzzle-player.html?url=aHR0cHM6Ly9pLmltZ3VyLmNvbS93WXJvM3ZYLmpwZ18obm9fcHJldmlld180KV8obm9wPTUwKQ~~&cred=TWNHaWxsIExpYnJhcnk~&color=white",
+                "text":"Solve the puzzle, and find the key hidden underneath the password in the final image."
+           		},
+                
+                
+                {//easter egg1
+                "pitch": 0.9,
+                "yaw": 20,
                 "type": "info",
                 "cssClass": "easterEgg1",
                  "clickHandlerFunc": openWindowFunc,
@@ -196,7 +197,7 @@ pannellum.viewer('panorama', {
                 "text":"Birk's Chapel"
            		},
            		
-           		{
+           		{ //Rosemary Brown puzzle 
                 "pitch": -5,
                 "yaw": 212,
                 "type": "info",
@@ -264,14 +265,17 @@ pannellum.viewer('panorama', {
                 "clickHandlerArgs": "modalMyCipher",
                 "text":"Solve the puzzle"
            		},
-                {//beryl jigsaw external window
+           		
+           		{//barbara jones puzzle - potato puzzle
                 "pitch": 0.9,
-                "yaw": 200,
+                "yaw": 150,
                 "type": "info",
                 "cssClass": "hotspotPuzzleImage",
-                "URL": "https://www.jigsawexplorer.com/online-jigsaw-puzzle-player.html?url=aHR0cHM6Ly9pLmltZ3VyLmNvbS93WXJvM3ZYLmpwZ18obm9fcHJldmlld180KV8obm9wPTUwKQ~~&cred=TWNHaWxsIExpYnJhcnk~&color=white",
-                "text":"Solve the puzzle, and find the key hidden underneath the password in the final image."
+                "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalPotato",
+                "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
            		},
+              
            	/*{//beryl jigsaw puzzle iframe option
                 "pitch": 0,
                 "yaw": 130,
@@ -304,8 +308,8 @@ pannellum.viewer('panorama', {
                 },
                 {
                 //Vibert douglas puzzle
-                "pitch": 0,
-                "yaw": -60,
+                "pitch": 90,
+                "yaw": 0,
                 "type": "info",
                "cssClass": "hotspotPuzzleImage",
                "clickHandlerFunc": openWindowFunc,
@@ -315,7 +319,7 @@ pannellum.viewer('panorama', {
                 {
                 //Harriet Brooks puzzle
                 "pitch": 0,
-                "yaw": -60,
+                "yaw": -100,
                 "type": "info",
                 "cssClass": "hotspotPuzzleImage",
                 "clickHandlerFunc": openWindowFunc,
@@ -332,15 +336,7 @@ pannellum.viewer('panorama', {
                     "text": "Welcome to Redpath Museum"
                 },
                
-           		{
-                "pitch": 0.9,
-                "yaw": 144.4,
-                "type": "info",
-                "cssClass": "hotspotPuzzleImage",
-                "clickHandlerFunc": openWindowFunc,
-                "clickHandlerArgs": "modalPotato",
-                "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
-           		},
+           	
             ]
         }
         
