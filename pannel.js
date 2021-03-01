@@ -122,15 +122,16 @@ pannellum.viewer('panorama', {
                 "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
             },
                 
-                /*extras for easter eggs{
+                {//easter egg percival molson
                     "pitch": 9.4,
                     "yaw": 102.6,
                     "type": "info",
+                    "cssClass": "infoHotspot",
                     "clickHandlerFunc": openWindowFunc,
-                    "clickHandlerArgs": "myModal",
-                    "text":"hotspot 4"
+                    "clickHandlerArgs": "modalPercival",
+                    "text":"Why Molson Stadium?"
                 },
-                {
+                /*extras for easter eggs{
                     "pitch": 0.9,
                     "yaw": 144.4,
                     "type": "info",
@@ -355,6 +356,7 @@ var modalMyCipher = document.getElementById("modalMyCipher");
 var modalRose = document.getElementById("modalRose");
 var modalPotato = document.getElementById("modalPotato");
 var modalEgg1 = document.getElementById("modalEgg1");
+var modalPercival = document.getElementById("modalPercival");
 
 
 
@@ -369,6 +371,8 @@ var spanCipherClose = document.getElementsByClassName("close6") [0];
 var spanEgg1Close = document.getElementsByClassName("close7") [0];
 var spanRoseClose = document.getElementsByClassName("close8")[0];
 var spanPotatoClose = document.getElementsByClassName("close9")[0];
+var spanPercivalClose = document.getElementsByClassName("close10")[0];
+
 
 
 //audio
@@ -488,6 +492,9 @@ spanPotatoClose.onclick = function(){
     modalPotato.style.display = "none";
 }
 
+spanPercivalClose.onclick = function(){
+    modalPercival.style.display = "none";
+}
 //function that checks for a password, enters a new site once enabled
 function passWord(hotspotDiv, args) {
     var testV = 1;
