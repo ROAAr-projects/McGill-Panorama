@@ -268,7 +268,7 @@ pannellum.viewer('panorama', {
            		
            		{//barbara jones puzzle - potato puzzle
                 "pitch": 0.9,
-                "yaw": 150,
+                "yaw": -100,
                 "type": "info",
                 "cssClass": "hotspotPuzzleImage",
                 "clickHandlerFunc": openWindowFunc,
