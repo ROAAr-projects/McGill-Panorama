@@ -26,6 +26,9 @@
                     "Scenario Scenario Canvas Canvas Canvas Description"
                         ". . . . . .";
                 }
+                p{
+                    margin-left: 5px;
+                }
                 .Header { 
                     grid-area: Header;
                     margin-top: 20px; 
@@ -43,18 +46,20 @@
                     box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
                 }
                 .Scenario { 
+                    width: 450px;
                     grid-area: Scenario;
                     background: #ffffff;
                     font-size: 120%;
                     text-align: left;
                     margin-left: 20px;
+                    -webkit-box-orient:horizontal;
+                    -webkit-box-direction:horizontal;
                     display:-webkit-box;
                     display:-ms-flexbox;
                     display:flex;
-                    justify-content:center;
-                    -ms-flex-direction:row;
-                    flex-direction:row;
-                    border-radius: 4px;
+                    -ms-flex-direction:column;
+                    flex-direction:column;
+                    border-radius: 2px;
                     -webkit-box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
                     box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
                 }
@@ -85,11 +90,16 @@
                 <br>
                 <br> I can not plant any of the same species side by side.  
                 <br>
-                <br>I have already planted a tomato and a potato, and you need to fill the remaining 4 spaces using the right combination of these 5 seeds: 2 beans, 1 potato, 1 pepper, 1 tomato.
+                <br>I have already planted a tomato and a potato, and you need to fill the remaining 4 spaces using the right combination of these 5 seeds:  
+                    <ul>
+                      <li> 2 beans, </li> 
+                      <li> 1 potato, </li> 
+                      <li> 1 pepper, </li> 
+                      <li> 1 tomato. </li>
+                    </ul>
+                    <p> The companion species information will help you. Drag and drop the vegetable tiles to help sort out which species will be leftover.
                 <br>
-                <br>The companion species information will help you. Drag and drop the vegetable tiles to help sort out which species will be leftover.
-                <br>
-                <br> You will end up with one leftover seed, and its species is the password. </p>
+                <br> You will end up with one leftover seed, and its species is the password. </p> 
             </div>
             <div class="Canvas" id="puzzle">
             </div>

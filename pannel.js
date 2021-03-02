@@ -496,6 +496,9 @@ spanPotatoClose.onclick = function(){
 spanPercivalClose.onclick = function(){
     modalPercival.style.display = "none";
 }
+
+
+
 //function that checks for a password, enters a new site once enabled
 function passWord(hotspotDiv, args) {
     var testV = 1;
