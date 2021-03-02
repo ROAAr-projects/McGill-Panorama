@@ -2,6 +2,7 @@ pannellum.viewer('panorama', {
     //initialize the starting photosphere
     "default": {
         "firstScene": "pano1",
+        "showControls": false,
     },
 
     //add all the possible different photospheres in here
