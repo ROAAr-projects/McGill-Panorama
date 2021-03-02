@@ -347,7 +347,6 @@ pannellum.viewer('panorama', {
 
 //global vars
 //modals
-var modal  = document.getElementById("myModal");
 var modalImage = document.getElementById("imageModal");
 var modalImageCompare = document.getElementById("imageModalCompare");
 var modalPhilMap = document.getElementById("modalPhilMap");
@@ -362,7 +361,6 @@ var modalPercival = document.getElementById("modalPercival");
 
 
 //close buttons
-var span = document.getElementsByClassName("close")[0];
 var spanImage = document.getElementsByClassName("close1")[0];
 var spanImage2 = document.getElementsByClassName("close2")[0];
 var spanPhilClose = document.getElementsByClassName("close3") [0];
@@ -455,11 +453,6 @@ function openWindowFunc(hotSpotDiv, args){
     tempModal.style.display = "block";
 };
 
-//function that checks for the element close in html and closes the modal for that specific span of the modal
-span.onclick = function() {
-    //when we click on the span (which is the class name of the button) and it hides that modal (which is out div)
-  modal.style.display = "none";
-}
 
 spanImage.onclick = function(){
     modalImage.style.display = "none";
