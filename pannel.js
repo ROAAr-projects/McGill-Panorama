@@ -2,6 +2,7 @@ pannellum.viewer('panorama', {
     //initialize the starting photosphere
     "default": {
         "firstScene": "pano1",
+         "showControls": false,
     },
 
     //add all the possible different photospheres in here
@@ -189,13 +190,13 @@ pannellum.viewer('panorama', {
                 
                 
                 {//easter egg1
-                "pitch": 0.9,
-                "yaw": 20,
+                "pitch": -2.1,
+                "yaw": 95,
                 "type": "info",
-                "cssClass": "easterEgg1",
+                "cssClass": "infoHotspot",
                  "clickHandlerFunc": openWindowFunc,
                 "clickHandlerArgs": "modalEgg1",
-                "text":"Birk's Chapel"
+                "text":"Find out more"
            		},
            		
            		{ //Rosemary Brown puzzle 
@@ -358,12 +359,11 @@ var spanImage = document.getElementsByClassName("close1")[0];
 var spanImage2 = document.getElementsByClassName("close2")[0];
 var spanPhilClose = document.getElementsByClassName("close3") [0];
 var spanBrooksClose = document.getElementsByClassName("close4") [0];
-var spanJigsawClose = document.getElementsByClassName("close5") [0];
-var spanCipherClose = document.getElementsByClassName("close6") [0];
+var spanCipherClose = document.getElementsByClassName("close5") [0];
+var spanRoseClose = document.getElementsByClassName("close6") [0];
 var spanEgg1Close = document.getElementsByClassName("close7") [0];
-var spanRoseClose = document.getElementsByClassName("close8")[0];
-var spanPotatoClose = document.getElementsByClassName("close9")[0];
-var spanPercivalClose = document.getElementsByClassName("close10")[0];
+var spanPotatoClose = document.getElementsByClassName("close8")[0];
+var spanPercivalClose = document.getElementsByClassName("close9")[0];
 
 
 
@@ -461,19 +461,16 @@ spanPhilClose.onclick = function(){
 spanBrooksClose.onclick = function(){
     modalBrooksPuzzle.style.display = "none";
 }
-spanJigsawClose.onclick = function(){
-    modalMyJigsaw.style.display = "none";
-}
+
 spanCipherClose.onclick = function(){
     modalMyCipher.style.display = "none";
 }
-//spanEgg1Close.onclick = function(){
-//    modalEgg1.style.display = "none";
-//}
+spanEgg1Close.onclick = function(){
+   modalEgg1.style.display = "none";
+}
 spanRoseClose.onclick = function(){
     modalRose.style.display = "none";
 }
-
 spanPotatoClose.onclick = function(){
     modalPotato.style.display = "none";
 }
@@ -481,6 +478,7 @@ spanPotatoClose.onclick = function(){
 spanPercivalClose.onclick = function(){
     modalPercival.style.display = "none";
 }
+
 //function that checks for a password, enters a new site once enabled
 function passWord(hotspotDiv, args) {
     var testV = 1;

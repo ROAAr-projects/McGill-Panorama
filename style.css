@@ -21,10 +21,32 @@
    }
 
 #panorama {
-    width: 1200px;
-    height: 800px;
-    margin: auto;
-    /*margin-top: 10%; removed to minimize frame*/ 
+    width: 1500px;
+    height: 900px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top; 2%;
+   
+}
+
+#controls{
+   position: absolute;
+   bottom: 0;
+   z-index: 2;
+   text-align: center;
+   width: 100%;
+   padding-bottom: 25px;
+}
+
+.controlButton {
+   padding: 8px 5px;
+   width: 200px;
+   height: 40px;
+   text-align: center;
+   background: rgb(255, 255, 255);
+   display: inline-block;
+   cursor: pointer;
+   border-radius: 16px;
 }
 
 #controls{
@@ -54,6 +76,13 @@ body{
     -ms-overflow-style:none;
     scrollbar-width:none;
     font-family: 'PT Sans', sans-serif;
+}
+a{ 
+    text-decoration: none; 
+    color: black
+}
+#menu{
+   margin-top: -5px;
 }
 
 body::-webkit-scrollbar{
@@ -171,7 +200,7 @@ cursor: pointer;
 .infoHotspot{
    height: 75px;
    width: 75px;
-   background-image:url("images/noun_question mark_75PX.png");
+   background-image:url("images/noun_info_75PX.png");
 }
 
 .hotspotPuzzleImage{
