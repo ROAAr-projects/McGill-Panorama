@@ -190,13 +190,13 @@ pannellum.viewer('panorama', {
                 
                 
                 {//easter egg1
-                "pitch": 0.9,
-                "yaw": 20,
+                "pitch": -2.1,
+                "yaw": 95,
                 "type": "info",
-                "cssClass": "easterEgg1",
+                "cssClass": "infoHotspot",
                  "clickHandlerFunc": openWindowFunc,
                 "clickHandlerArgs": "modalEgg1",
-                "text":"Birk's Chapel"
+                "text":"Find out more"
            		},
            		
            		{ //Rosemary Brown puzzle 

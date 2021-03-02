@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  body {
+    overflow-y: scroll;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 0.2fr 2fr 0.2fr 2.4fr 0.2fr;
+    grid-template-rows: 0.2fr 0.7fr 2.8fr 1fr 0.3fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". Text . . ."
+      ". Text . Percival ."
+      ". Text . . ."
+      ". . . . .";
+  }
+
+  .Text { 
+    grid-area: Text; 
+    
+    }
+
+  .Percival { 
+    grid-area: Percival; 
+    
+    }
+
+
+  body::-webkit-scrollbar{
+      display:none
+    }
+
+  #img1 {
+    width: 1000px;
+    height: 1337px;
+    margin-top: -250px;
+  }
+
+  #textBlock{
+      width: 550px;
+      margin-left: 2%;
+      margin-top: 20px;
+      font-size:120%; 
+      text-align:left;
+      Float: left;
+      background: #f6f5f3;
+      height:30em;
+      -webkit-box-orient:horizontal;
+      -webkit-box-direction:horizontal;
+      display:-webkit-box;
+      display:-ms-flexbox;
+      display:flex;
+      -ms-flex-direction:column;
+      flex-direction:column;
+      position: relative;
+      border-radius: 16px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div id="textBlock" class="Text">
+    <h3 align="center"> Birk's Chapel </h3>
+    <h3 align="center"> content </h3>
+        <ul>
+
+        </ul>
+    </div>
+  
+    <div class = "Percival">
+      <img id="img1"  src="images/PR023025.JPG">
+    
+    </div>
+  </div>
+ 
+</body>
+</html>
