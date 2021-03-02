@@ -2,7 +2,6 @@ pannellum.viewer('panorama', {
     //initialize the starting photosphere
     "default": {
         "firstScene": "pano1",
-        "showControls": false,
     },
 
     //add all the possible different photospheres in here
@@ -278,15 +277,7 @@ pannellum.viewer('panorama', {
                 "text":"Solve the puzzle, and enter the password in your card inventory to unlock this teammate."
            		},
               
-           	/*{//beryl jigsaw puzzle iframe option
-                "pitch": 0,
-                "yaw": 130,
-                "type": "info",
-                "cssClass": "hotspotPuzzleImage",
-                "clickHandlerFunc": openWindowFunc,
-                "clickHandlerArgs": "modalMyJigsaw",
-                "text":"Solve the puzzle, and enter the password in your card inventory"
-            },*/
+          
             ]
         },
          "pano5": {
@@ -347,6 +338,7 @@ pannellum.viewer('panorama', {
 
 //global vars
 //modals
+var modal  = document.getElementById("myModal");
 var modalImage = document.getElementById("imageModal");
 var modalImageCompare = document.getElementById("imageModalCompare");
 var modalPhilMap = document.getElementById("modalPhilMap");
@@ -361,6 +353,7 @@ var modalPercival = document.getElementById("modalPercival");
 
 
 //close buttons
+var span = document.getElementsByClassName("close")[0];
 var spanImage = document.getElementsByClassName("close1")[0];
 var spanImage2 = document.getElementsByClassName("close2")[0];
 var spanPhilClose = document.getElementsByClassName("close3") [0];
@@ -453,6 +446,11 @@ function openWindowFunc(hotSpotDiv, args){
     tempModal.style.display = "block";
 };
 
+//function that checks for the element close in html and closes the modal for that specific span of the modal
+span.onclick = function() {
+    //when we click on the span (which is the class name of the button) and it hides that modal (which is out div)
+  modal.style.display = "none";
+}
 
 spanImage.onclick = function(){
     modalImage.style.display = "none";
@@ -489,9 +487,6 @@ spanPotatoClose.onclick = function(){
 spanPercivalClose.onclick = function(){
     modalPercival.style.display = "none";
 }
-
-
-
 //function that checks for a password, enters a new site once enabled
 function passWord(hotspotDiv, args) {
     var testV = 1;
