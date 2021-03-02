@@ -75,7 +75,7 @@ body::-webkit-scrollbar{
 }
     
 /* The Close Button */
-.close, .close1, .close2, .close3, .close4, .close5, .close6, .close7, .close8, .close9 {
+.close, .close1, .close2, .close3, .close4, .close5, .close6, .close7, .close8, .close9, .close10 {
 color: #ed1b2f;
 float: left;
 font-size: 80px;
@@ -103,6 +103,8 @@ Margin-left:50px;
 .close8:hover,
 .close9:focus,
 .close9:hover
+.close10:focus,
+.close10:hover,
 {
 color: #aaa;
 text-decoration: none;
@@ -139,6 +141,12 @@ cursor: pointer;
    height: 75px;
    width: 75px;
    background-image:url("images/noun_up_75px.png");
+}
+
+.infoHotspot{
+   height: 75px;
+   width: 75px;
+   background-image:url("images/noun_question mark_75PX.png");
 }
 
 .hotspotPuzzleImage{
