@@ -1,10 +1,9 @@
 .grid-container {
    display: grid;
    grid-template-columns: 0.2fr 1.8fr 1.8fr 0.2fr;
-   grid-template-rows: 0.2fr 1.8fr 1fr;
+   grid-template-rows: 2fr 1fr;
    gap: 0px 0px;
    grid-template-areas:
-     "Navbar Navbar Navbar Navbar"
      "curtain pannellum pannellum curtain2"
      "curtain pannellum pannellum curtain2";
  }
@@ -28,6 +27,27 @@
     /*margin-top: 10%; removed to minimize frame*/ 
 }
 
+#controls{
+   position: absolute;
+   bottom: 0;
+   z-index: 2;
+   text-align: center;
+   width: 100%;
+   padding-bottom: 25px;
+}
+
+.controlButton {
+   padding: 8px 5px;
+   width: 200px;
+   height: 40px;
+   text-align: center;
+   background: rgb(255, 255, 255);
+   display: inline-block;
+   cursor: pointer;
+   border-radius: 16px;
+}
+
+
 body{
     background-color: black;
     overflow-y: scroll;
@@ -39,6 +59,12 @@ body{
 body::-webkit-scrollbar{
    display:none
  }
+
+ 
+ a{ 
+   text-decoration: none; 
+   color: black
+}
 
 .modal {
    display: none; 
@@ -75,7 +101,7 @@ body::-webkit-scrollbar{
 }
     
 /* The Close Button */
-.close, .close1, .close2, .close3, .close4, .close5, .close6, .close7, .close8, .close9, .close10 {
+.close1, .close2, .close3, .close4, .close5, .close6, .close7, .close8, .close9, .close10 {
 color: #ed1b2f;
 float: left;
 font-size: 80px;
@@ -83,8 +109,7 @@ font-weight: bold;
 Margin-left:50px;
 }
 
-.close:hover,
-.close:focus,
+
 .close1:hover,
 .close1:focus, 
 .close2:hover,
@@ -102,9 +127,9 @@ Margin-left:50px;
 .close8:focus,
 .close8:hover,
 .close9:focus,
-.close9:hover
+.close9:hover,
 .close10:focus,
-.close10:hover,
+.close10:hover
 {
 color: #aaa;
 text-decoration: none;
@@ -160,6 +185,11 @@ cursor: pointer;
    background-image:url("images/PR023025.jpg");
 
 }
+
+#menu{
+   margin-top: -5px;
+}
+
 
 /* keyframes */
 @-webkit-keyframes zoomIn{
