@@ -344,7 +344,6 @@ var modalImage = document.getElementById("imageModal");
 var modalImageCompare = document.getElementById("imageModalCompare");
 var modalPhilMap = document.getElementById("modalPhilMap");
 var modalBrooksPuzzle = document.getElementById("modalBrooksPuzzle");
-var modalMyJigsaw = document.getElementById("modalMyJigsaw");
 var modalMyCipher = document.getElementById("modalMyCipher");
 var modalRose = document.getElementById("modalRose");
 var modalPotato = document.getElementById("modalPotato");
