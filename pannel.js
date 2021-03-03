@@ -61,7 +61,25 @@ pannellum.viewer('panorama', {
                      "cssClass": "directionArrow",
                     "text": "To Redpath Museum",
                     "sceneId": "pano5"
-                }
+                },
+                {//easter egg1 - lower campus field
+                "pitch": -5,
+                "yaw": 180,
+                "type": "info",
+                "cssClass": "infoHotspot",
+                 "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalCampusEgg2",
+                "text":"Find out more"
+           		},
+           		{//easter egg1
+                "pitch": 10,
+                "yaw": 60,
+                "type": "info",
+                "cssClass": "infoHotspot",
+                 "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalCampusEgg",
+                "text":"Find out more"
+           		},
            
             ]
         },
@@ -124,13 +142,22 @@ pannellum.viewer('panorama', {
             },
                 
                 {//easter egg percival molson
-                    "pitch": 9.4,
+                    "pitch": 5,
                     "yaw": 102.6,
                     "type": "info",
                     "cssClass": "infoHotspot",
                     "clickHandlerFunc": openWindowFunc,
                     "clickHandlerArgs": "modalPercival",
                     "text":"Why Molson Stadium?"
+                },
+                {//easter egg hockey stick
+                    "pitch": 5,
+                    "yaw": -102.6,
+                    "type": "info",
+                    "cssClass": "infoHotspot",
+                    "clickHandlerFunc": openWindowFunc,
+                    "clickHandlerArgs": "modalMolsonEgg2",
+                    "text":"Find out more"
                 },
                 /*extras for easter eggs{
                     "pitch": 0.9,
@@ -199,6 +226,16 @@ pannellum.viewer('panorama', {
                 "text":"Find out more"
            		},
            		
+           		{//easter egg2
+                "pitch": -2.1,
+                "yaw": 70,
+                "type": "info",
+                "cssClass": "infoHotspot",
+                 "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalBirksEgg2",
+                "text":"Find out more"
+           		},
+           		
            		{ //Rosemary Brown puzzle 
                 "pitch": -5,
                 "yaw": 212,
@@ -258,6 +295,24 @@ pannellum.viewer('panorama', {
                     "text": "To Birks Reading Room",
                     "sceneId": "pano3"
                 },*/
+                {//easter egg1
+                "pitch": -8,
+                "yaw": -75,
+                "type": "info",
+                "cssClass": "infoHotspot",
+                 "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalMoyseEgg",
+                "text":"Find out more"
+           		},
+           		{//easter egg2
+                "pitch": -8,
+                "yaw": 75,
+                "type": "info",
+                "cssClass": "infoHotspot",
+                 "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalMoyseEgg2",
+                "text":"Find out more"
+           		},
                  {//Bertha puzzle
                 "pitch": 0.9,
                 "yaw": 100,
@@ -329,6 +384,25 @@ pannellum.viewer('panorama', {
                     "clickHandlerArgs": "redpathAudio",
                     "text": "Welcome to Redpath Museum"
                 },
+                {//easter egg redpathEgg
+                "pitch": -2.1,
+                "yaw": 95,
+                "type": "info",
+                "cssClass": "infoHotspot",
+                 "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalRedpathEgg",
+                "text":"Find out more"
+           		},
+           		{//easter egg redpathEgg2
+                "pitch": -2.1,
+                "yaw": -95,
+                "type": "info",
+                "cssClass": "infoHotspot",
+                 "clickHandlerFunc": openWindowFunc,
+                "clickHandlerArgs": "modalRedpathEgg2",
+                "text":"Find out more"
+           		},
+                
                
            	
             ]
@@ -349,6 +423,18 @@ var modalRose = document.getElementById("modalRose");
 var modalPotato = document.getElementById("modalPotato");
 var modalEgg1 = document.getElementById("modalEgg1");
 var modalPercival = document.getElementById("modalPercival");
+var modalBirksEgg2 = document.getElementById("modalBirksEgg2");
+var modalCampusEgg = document.getElementById("modalCampusEgg");
+var modalCampusEgg2 = document.getElementById("modalCampusEgg2");
+var modalMoyseEgg = document.getElementById("modalMoyseEgg");
+var modalMoyseEgg2 = document.getElementById("modalMoyseEgg2");
+var modalRedpathEgg2 = document.getElementById("modalRedpathEgg2");
+var modalRedpathEgg = document.getElementById("modalRedpathEgg");
+var modalMolsonEgg2 = document.getElementById("modalMolsonEgg2");
+
+
+
+
 
 
 
@@ -361,8 +447,21 @@ var spanBrooksClose = document.getElementsByClassName("close4") [0];
 var spanCipherClose = document.getElementsByClassName("close5") [0];
 var spanRoseClose = document.getElementsByClassName("close6") [0];
 var spanEgg1Close = document.getElementsByClassName("close7") [0];
-var spanPotatoClose = document.getElementsByClassName("close8")[0];
-var spanPercivalClose = document.getElementsByClassName("close9")[0];
+var spanPotatoClose = document.getElementsByClassName("close8") [0];
+var spanPercivalClose = document.getElementsByClassName("close9") [0];
+var spanBirksEgg2Close = document.getElementsByClassName("close10") [0];
+var spanCampusEggClose = document.getElementsByClassName("close11") [0];
+var spanCampusEgg2Close = document.getElementsByClassName("close12") [0];
+var spanMoyseEggClose = document.getElementsByClassName("close13") [0];
+var spanMoyseEgg2Close = document.getElementsByClassName("close14") [0];
+var spanRedpathEggClose = document.getElementsByClassName("close15") [0];
+var spanRedpathEgg2Close = document.getElementsByClassName("close16") [0];
+var spanMolsonEgg2Close = document.getElementsByClassName("close17") [0];
+
+
+
+
+
 
 
 
@@ -473,9 +572,32 @@ spanRoseClose.onclick = function(){
 spanPotatoClose.onclick = function(){
     modalPotato.style.display = "none";
 }
-
 spanPercivalClose.onclick = function(){
     modalPercival.style.display = "none";
+}
+spanBirksEgg2Close.onclick = function(){
+    modalBirksEgg2.style.display = "none";
+}
+spanCampusEggClose.onclick = function(){
+    modalCampusEgg.style.display = "none";
+}
+spanCampusEgg2Close.onclick = function(){
+    modalCampusEgg2.style.display = "none";
+}
+spanMoyseEggClose.onclick = function(){
+    modalMoyseEgg.style.display = "none";
+}
+spanMoyseEgg2Close.onclick = function(){
+    modalMoyseEgg2.style.display = "none";
+}
+spanRedpathEggClose.onclick = function(){
+    modalRedpathEgg.style.display = "none";
+}
+spanRedpathEgg2Close.onclick = function(){
+    modalRedpathEgg2.style.display = "none";
+}
+spanMolsonEgg2Close.onclick = function(){
+    modalMolsonEgg2.style.display = "none";
 }
 
 //function that checks for a password, enters a new site once enabled

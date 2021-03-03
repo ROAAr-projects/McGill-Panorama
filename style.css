@@ -147,7 +147,7 @@ body::-webkit-scrollbar{
 }
     
 /* The Close Button */
-.close1, .close2, .close3, .close4, .close5, .close6, .close7, .close8, .close9, .close10 {
+.close1, .close2, .close3, .close4, .close5, .close6, .close7, .close8, .close9, .close10, .close11, .close12, .close13, .close14, .close15, .close16, .close17{
 color: #ed1b2f;
 float: left;
 font-size: 80px;
@@ -168,6 +168,7 @@ Margin-left:50px;
 .close5:focus,
 .close6:hover,
 .close6:focus,
+
 .close7:focus,
 .close7:hover,
 .close8:focus,
@@ -175,8 +176,21 @@ Margin-left:50px;
 .close9:focus,
 .close9:hover,
 .close10:focus,
-.close10:hover
-{
+.close10:hover,
+.close11:focus,
+.close11:hover,
+.close12:focus,
+.close12:hover,
+.close13:focus,
+.close13:hover,
+.close14:focus,
+.close14:hover,
+.close15:focus,
+.close15:hover,
+.close16:focus,
+.close16:hover,
+.close17:focus,
+.close17:hover{
 color: #aaa;
 text-decoration: none;
 cursor: pointer;
@@ -215,8 +229,8 @@ cursor: pointer;
 }
 
 .infoHotspot{
-   height: 75px;
-   width: 75px;
+   height: 25px;
+   width: 25px;
    background-image:url("images/noun_info_75PX.png");
 }
 
