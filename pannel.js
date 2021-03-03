@@ -395,7 +395,7 @@ pannellum.viewer('panorama', {
            		},
            		{//easter egg redpathEgg2
                 "pitch": -2.1,
-                "yaw": -95,
+                "yaw": -165,
                 "type": "info",
                 "cssClass": "infoHotspot",
                  "clickHandlerFunc": openWindowFunc,
