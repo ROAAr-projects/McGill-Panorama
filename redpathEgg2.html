@@ -36,23 +36,19 @@
       display:none
     }
 
-  #img1 {
-    width: 1000px;
-    height: 732px;
-    margin-top:-100px;
-  }
   #img-zoomed {
-      width: 1000px;
-      height: 100%;
+      width: 2000px;
+      height: auto;
       cursor:none;
       position: relative;
-      margin-top:-100px;
-      margin-left: 0%;
+      margin-top: 40px;
+      margin-left: 50px;
     }
 
     #originalImage {
-      width: 1000px;
+      width: 600px;
       height: auto;
+
     }
 
     #img-zoomed:hover, #img-zoomer-box:active {
@@ -66,8 +62,8 @@
     }
 
     #glass {
-      width: 340px;
-      height: 340px;
+      width: 300px;
+      height: 300px;
       background: url('images/RG4_C4_1.jpg') no-repeat  ;
       pointer-events: none;
       position: absolute;
@@ -142,8 +138,8 @@
 
     style.backgroundPositionX = (xZoomPos - 9) + '%';
     style.backgroundPositionY = (yZoomPos - 9) + '%';
-    style.left = (x - 180) + 'px';
-    style.top = (y - 180) + 'px';
+    style.left = (x - 200) + 'px';
+    style.top = (y - 150) + 'px';
     }, 
     false); 
 }();

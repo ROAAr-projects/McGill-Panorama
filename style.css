@@ -36,11 +36,11 @@
    }
 }
 
-@media (min-width: 1440px){
+@media (min-width: 1400px){
    #panorama {
-      width: 1400px;
+      width: 1200px;
       height: 850px;
-      margin:auto;
+      margin-left: 2%;
    }
 }
 
@@ -64,25 +64,6 @@
    border-radius: 16px;
 }
 
-#controls{
-   position: absolute;
-   bottom: 0;
-   z-index: 2;
-   text-align: center;
-   width: 100%;
-   padding-bottom: 25px;
-}
-
-.controlButton {
-   padding: 8px 5px;
-   width: 200px;
-   height: 40px;
-   text-align: center;
-   background: rgb(255, 255, 255);
-   display: inline-block;
-   cursor: pointer;
-   border-radius: 16px;
-}
 
 
 body{
@@ -103,7 +84,7 @@ a{
 }
 
 body::-webkit-scrollbar{
-   display:none
+   display:none;
  }
 
  
@@ -143,7 +124,7 @@ body::-webkit-scrollbar{
 }
 
 .modal-content::-webkit-scrollbar{
-   display:none;
+   
 }
     
 /* The Close Button */
@@ -191,9 +172,9 @@ Margin-left:50px;
 .close16:hover,
 .close17:focus,
 .close17:hover{
-color: #aaa;
-text-decoration: none;
-cursor: pointer;
+   color: #aaa;
+   text-decoration: none;
+   cursor: pointer;
 }
 
 

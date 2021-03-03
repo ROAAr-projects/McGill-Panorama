@@ -39,10 +39,12 @@
 
   #img1 {
     width: 1000px;
-    height: 691px;
+    height: autopx;
     margin-top:-100px;
+    margin-left: 25px;
   }
 
+  
   #textBlock{
       width: 550px;
       margin-left: 2%;
@@ -63,6 +65,95 @@
       border-radius: 16px;
     }
 
+  @media (max-width: 1300px){
+    #img1{
+    width: 650px;
+    height: auto;
+    margin-top:-22px;
+    margin-left: 25px;
+    }
+
+    #textBlock{
+       width: 500px;
+      margin-left: 2%;
+      margin-top: 20px;
+      font-size:110%; 
+      text-align: left;
+      background: #f6f5f3;
+      height:30em;
+      -webkit-box-orient:horizontal;
+      -webkit-box-direction:horizontal;
+      display:-webkit-box;
+      display:-ms-flexbox;
+      display:flex;
+      -ms-flex-direction:column;
+      flex-direction:column;
+      position: relative;
+      border-radius: 16px;
+    }
+  }
+  
+  @media (max-width: 1500px){
+    #img1{
+    width: 750px;
+    height: auto;
+    margin-top:-32px;
+    margin-left: 15px;
+    }
+
+    #textBlock{
+       width: 500px;
+      margin-left: 2%;
+      margin-top: 20px;
+      font-size:110%; 
+      text-align: left;
+      background: #f6f5f3;
+      height:30em;
+      -webkit-box-orient:horizontal;
+      -webkit-box-direction:horizontal;
+      display:-webkit-box;
+      display:-ms-flexbox;
+      display:flex;
+      -ms-flex-direction:column;
+      flex-direction:column;
+      position: relative;
+      border-radius: 16px;
+    }
+  }
+
+  @media(min-width: 1501px){
+    
+  #img1 {
+    width: 950px;
+    height: auto;
+    margin-top: -45px;
+    margin-left: 25px;
+  }
+
+  
+  #textBlock{
+      width: 550px;
+      margin-left: 2%;
+      margin-top: 20px;
+      font-size:120%; 
+      text-align:left;
+      Float: left;
+      background: #f6f5f3;
+      height:30em;
+      -webkit-box-orient:horizontal;
+      -webkit-box-direction:horizontal;
+      display:-webkit-box;
+      display:-ms-flexbox;
+      display:flex;
+      -ms-flex-direction:column;
+      flex-direction:column;
+      position: relative;
+      border-radius: 16px;
+    }
+  }
+
+  
+
   </style>
 </head>
 
@@ -75,7 +166,7 @@
         <br>Raptors, as they are commonly known, had bigger brains compared to other carnivorous dinosaurs.The Redpath Museum contains over 12,000 catalogued specimens.</ul>
     </div>
   
-    <div class = "Percival">
+    <div class = "Percival" div id="img1">
       <img id="img1"  src="images/PR045442.jpg">
     
     </div>
