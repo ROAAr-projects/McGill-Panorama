@@ -22,27 +22,46 @@
 
 #panorama {
    width:1000px;
-   height: 700px;
+   height: 650px;
    margin: auto;
 }
 
-@media (min-width: 1600px){
+
+@media (min-width: 1366px) and (min-height: 768px ){
    #panorama {
-      width: 1500px;
-      height: 900px;
+      width: 1200px;
+      height: 700px;
       margin-left: 2%;
-      margin-right: 2%;
-      margin-top: 2%;
    }
 }
 
-@media (min-width: 1400px){
+@media (min-width: 1440px) and (min-height: 900px){
    #panorama {
-      width: 1200px;
-      height: 850px;
-      margin-left: 2%;
+      width: 1300px;
+      height: 750px;
+      margin-right: 8%;
    }
 }
+
+
+@media (min-width: 1536px) and (min-height: 864px){
+   #panorama {
+      width: 1400px;
+      height: 800px;
+      margin-left: 2%;
+      margin-right: auto;
+   }
+}
+
+@media (min-width: 1680px) and (min-height: 1050px){
+   #panorama {
+      width: 1500px;
+      height: 850px;
+      margin-left: 4%;
+      margin-right: auto;
+   }
+}
+
 
 #controls{
    position: absolute;
