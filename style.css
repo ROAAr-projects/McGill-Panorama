@@ -2,7 +2,7 @@
    display: grid;
    grid-template-columns: 0.2fr 1.8fr 1.8fr 0.2fr;
    grid-template-rows: 2fr 1fr;
-   gap: 0px 0px;
+   gap: 0px 20px;
    grid-template-areas:
      "curtain pannellum pannellum curtain2"
      "curtain pannellum pannellum curtain2";
