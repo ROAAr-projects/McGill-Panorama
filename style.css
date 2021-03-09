@@ -39,7 +39,7 @@
    #panorama {
       width: 1300px;
       height: 750px;
-
+      margin-left: 2%;
    }
 }
 
@@ -48,7 +48,7 @@
    #panorama {
       width: 1400px;
       height: 800px;
-
+      margin-left: 2%;
    }
 }
 
@@ -56,7 +56,7 @@
    #panorama {
       width: 1500px;
       height: 850px;
-
+      margin-left: 2%;
    }
 }
 
@@ -64,7 +64,7 @@
    #panorama {
       width: 1600px;
       height: 950px;
-
+      margin-left: 2%;
    }
 }
 
