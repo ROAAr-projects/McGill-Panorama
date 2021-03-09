@@ -27,7 +27,7 @@
 }
 
 
-@media (min-width: 1366px) and (min-height: 768px ){
+@media (min-width: 1366px) {
    #panorama {
       width: 1200px;
       height: 700px;
@@ -35,16 +35,16 @@
    }
 }
 
-@media (min-width: 1440px) and (min-height: 900px){
+@media (min-width: 1440px) {
    #panorama {
       width: 1300px;
-      height: 750px;
-      margin-left: 1%;
+      height: 800px;
+      margin-left: 2%;
    }
 }
 
 
-@media (min-width: 1536px) and (min-height: 864px){
+@media (min-width: 1536px) {
    #panorama {
       width: 1400px;
       height: 800px;
@@ -53,7 +53,7 @@
    }
 }
 
-@media (min-width: 1680px) and (min-height: 1050px){
+@media (min-width: 1680px) {
    #panorama {
       width: 1500px;
       height: 850px;
@@ -61,28 +61,28 @@
    }
 }
 
-@media (min-width: 1920px) and (min-height: 1080px){
+@media (min-width: 1800px){
    #panorama {
       width: 1600px;
       height: 950px;
-      margin-left: 4%;
+      margin-left: 2%;
    }
 }
 
-@media (min-width: 2150px) and (min-height: 1080px){
+@media (min-width: 2100px) {
    #panorama {
       width: 1800px;
-      height: 900px;
-      margin-left: 4%;
+      height: 1200px;
+      margin-left: 6%;
       margin-right: auto;
    }
 }
 
-@media (min-width: 2560px) and (min-height: 1440px){
+@media (min-width: 2500px) {
    #panorama {
       width: 2000px;
       height: 1400px;
-      margin-left: 4%;
+      margin-left: 6%;
       margin-right: auto;
    }
 }
@@ -111,7 +111,7 @@
 
 
 body{
-    background-image:url("images/bg.png");
+    background-color: black;
     background-repeat: repeat;
     overflow-y: scroll;
     -ms-overflow-style:none;
