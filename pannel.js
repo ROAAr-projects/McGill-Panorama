@@ -11,7 +11,7 @@ pannellum.viewer('panorama', {
             "title": "Lower Campus",
             "author": "McGill Library",
             "hfov": 300,
-            "yaw": 15,
+            "yaw": 0,
             "autoLoad": true,
             "horizonRoll": -2.5,//added to correct non-level panorama
             "compass": true,
