@@ -3,8 +3,10 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+
   body {
     overflow-y: scroll;
+    overflow-x: scroll;
     -ms-overflow-style:none;
     scrollbar-width:none;
     font-family: 'PT Sans', sans-serif;
@@ -41,9 +43,35 @@
   #img1 {
     width: 1000px;
     height: auto;
-    margin-top: -200px;
+    margin-top: 25px;
     margin-left: 25px;
   }
+
+  @media (min-width: 1200px) and (min-height: 700px ){
+   #img1 {
+    width: 700px;
+    height: auto;
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+}
+
+@media (min-width: 1680px) and (min-height: 1080px){
+   #img1 {
+      width: 950px;
+      height: auto;
+      margin-left: 25px;
+   }
+}
+
+@media (min-width: 1920px) and (min-height: 1080px){
+   #img1 {
+      width: 1200px;
+      height: auto;
+      margin-left: 10px;
+      margin-top: 5px;
+   }
+}
 
   #textBlock{
       width: 550px;
@@ -63,7 +91,7 @@
       flex-direction:column;
       position: relative;
       border-radius: 16px;
-    }
+  }
 
   </style>
 </head>
