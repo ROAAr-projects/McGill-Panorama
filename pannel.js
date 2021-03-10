@@ -19,7 +19,7 @@ pannellum.viewer('panorama', {
             "panorama": "https://i.imgur.com/oSC3BEj.jpg",
             "hotSpots": [
                {//welcome hotspot - sound works. 
-                    "yaw": -30,
+                    "yaw": -50,
                     "type": "info",
                     "cssClass": "welcomeHotspot",
                     "clickHandlerFunc": playAudio,
