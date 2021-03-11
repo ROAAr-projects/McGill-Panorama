@@ -20,6 +20,7 @@ pannellum.viewer('panorama', {
             "hotSpots": [
                {//welcome hotspot - sound works. 
                     "yaw": -50,
+                    "pitch": -10,
                     "type": "info",
                     "cssClass": "welcomeHotspot",
                     "clickHandlerFunc": playAudio,
