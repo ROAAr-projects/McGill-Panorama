@@ -383,7 +383,7 @@ pannellum.viewer('panorama', {
                     "cssClass": "welcomeHotspot",
                     "clickHandlerFunc": playAudioMuseum,
                     "clickHandlerArgs": "redpathAudio",
-                    "text": "Welcome to Redpath Museum. Look around to find two of your teammates. Click here to hear more about the museum."
+                    "text": "Welcome to Redpath Museum. Look all around to find two of your teammates. Click here to hear more about the museum."
                 },
                 {//easter egg redpathEgg
                 "pitch": -2.1,
