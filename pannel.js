@@ -25,7 +25,7 @@ pannellum.viewer('panorama', {
                     "cssClass": "welcomeHotspot",
                     "clickHandlerFunc": playAudio,
                     "clickHandlerArgs": "lowerWelcomeAudio",
-                    "text": "Welcome to McGill's Lower Campus. Here you see the Arts Building, but click and drag and you'll see the path to other places to explore on Campus. Go left for the Redpath Museum, or go right to make your way to Birks Library and the Molson Stadium."
+                    "text": "Welcome to McGill's Lower Campus. Here you see the Arts Building, but click and drag and you'll see the path to other places to explore on Campus. Go left for the Redpath Museum, or go right to make your way to Birks Reading Room and the Molson Stadium."
                 },
                 {
                     "pitch": -0.6,
@@ -112,7 +112,7 @@ pannellum.viewer('panorama', {
                     "cssClass": "welcomeHotspot",
                     "clickHandlerFunc": playMolsonAudio,
                     "clickHandlerArgs": "molsonAudio",
-                    "text": "Welcome to Molson Stadium",
+                    "text": "Welcome to Molson Stadium. Click here to hear more about this space.",
                 },
                 /*commented out bc i don't think we need it{
                     "pitch": -2.1,
@@ -143,7 +143,7 @@ pannellum.viewer('panorama', {
             },
                 
                 {//easter egg percival molson
-                    "pitch": 5,
+                    "pitch": -1,
                     "yaw": 102.6,
                     "type": "info",
                     "cssClass": "infoHotspot",
@@ -196,7 +196,7 @@ pannellum.viewer('panorama', {
                     "cssClass": "welcomeHotspot",
                     "clickHandlerFunc": playBirksAudio,
                     "clickHandlerArgs": "birksAudio",
-                    "text": "Welcome to Birks Reading Room",
+                    "text": "Welcome to Birks Reading Room. Click here to hear more about this space.",
                 },
                 {
                     "pitch": -2.1,
@@ -265,7 +265,7 @@ pannellum.viewer('panorama', {
                     "cssClass": "welcomeHotspot",
                     "clickHandlerFunc": playMoyseAudio,
                     "clickHandlerArgs": "moyseAudio",
-                    "text": "Welcome to Moyse Hall",
+                    "text": "Welcome to Moyse Hall. Click here to hear more about this space.",
                 },
                 
                 {
@@ -383,7 +383,7 @@ pannellum.viewer('panorama', {
                     "cssClass": "welcomeHotspot",
                     "clickHandlerFunc": playAudioMuseum,
                     "clickHandlerArgs": "redpathAudio",
-                    "text": "Welcome to Redpath Museum"
+                    "text": "Welcome to Redpath Museum. Look around to find two of your teammates. Click here to hear more about the museum."
                 },
                 {//easter egg redpathEgg
                 "pitch": -2.1,
