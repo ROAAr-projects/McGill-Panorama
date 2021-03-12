@@ -212,7 +212,7 @@ pannellum.viewer('panorama', {
                 "yaw": 150,
                 "type": "info",
                 "cssClass": "hotspotPuzzleImage",
-                "URL": "https://www.jigsawexplorer.com/online-jigsaw-puzzle-player.html?url=aHR0cHM6Ly9pLmltZ3VyLmNvbS93WXJvM3ZYLmpwZ18obm9fcHJldmlld180KV8obm9wPTUwKQ~~&cred=TWNHaWxsIExpYnJhcnk~&color=white",
+                "URL": "https://www.jigsawexplorer.com/online-jigsaw-puzzle-player.html?url=aHR0cHM6Ly9pLmltZ3VyLmNvbS9ud2o2V0ZOLmpwZ18obm9fcHJldmlld180KV8obm9wPTUwKQ~~&cred=TWNHaWxsIExpYnJhcnk~&color=white",
                 "text":"Solve the puzzle, and find the key hidden underneath the password in the final image."
            		},
                 
