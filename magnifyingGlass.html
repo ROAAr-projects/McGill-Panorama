@@ -24,17 +24,34 @@
     }
 
     #img-zoomed {
-      width: 750px;
+      width: 1000px;
       height: 100%;
       cursor:none;
       position: relative;
       margin-top: 20px;
-      margin-left: 22%;
+      margin-left: 12%;
     }
 
     #originalImage {
-      width: 750px;
+      width: 1000px;
       height: auto;
+    }
+
+    
+    @media (min-width: 1500px){
+      #img-zoomed {
+            width: 1400px;
+            height: 100%;
+            cursor:none;
+            position: relative;
+            margin-top: 20px;
+            margin-left: 4%;
+          }
+
+          #originalImage {
+            width: 1400px;
+            height: auto;
+          }
     }
 
     #img-zoomed:hover, #img-zoomer-box:active {
