@@ -1,0 +1,96 @@
+body {
+   background-color: #fdfcfb;
+    overflow-y: scroll;
+    -ms-overflow-style:none;
+    scrollbar-width: 20px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.1fr 1.6fr 1.3fr 1.8fr 0.2fr;
+    grid-template-rows: 0.4fr 4.4fr 0.3fr 0.4fr;
+    gap: 10px 15px;
+    grid-template-areas:
+      ". Title Title Title ."
+      ". Instructions Canvas Canvas ."
+      ". . controls controls ."
+      ". Text Text Text .";
+  }
+  
+  .Instructions { grid-area: Instructions; }
+  
+  .Canvas { grid-area: Canvas;
+ }
+  
+  .controls { 
+    grid-area: controls; 
+    padding: 30px 30px;
+  } 
+  
+  .Text { 
+    grid-area: Text; 
+
+    }
+  
+  .Title { grid-area: Title; }
+  
+  .btn1{
+    background-color: black;
+    color: #fdfcfb;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px 32px;
+    border: none;
+    margin: 8px -32px;
+    cursor: pointer;
+}
+
+  
+
+h3{
+    text-align: center;
+    margin-left: 200px;
+}
+
+#textBlock{
+    margin-top: 75px;
+
+    width: 450px;
+    height: 520px;
+    font-size:14px; 
+    text-align:left;
+    background: #fdfcfb;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    border-radius: 16px;
+    -webkit-box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
+    box-shadow:  15px 15px 27px #8c8c8c, -15px -15px 27px #fdfcfb;
+}
+
+#map{
+    width: 800px;
+    height: 800px;
+    border: 10px solid #907346;
+    border-radius: 10px;
+}
+
+
+
+#clearMapButton{
+    
+}
+
+
+#bottom{
+    text-align: center;
+    margin-top: 2%;
+    font-size:100%; 
+}

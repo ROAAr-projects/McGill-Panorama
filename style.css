@@ -21,68 +21,9 @@
    }
 
 #panorama {
-   width:1000px;
-   height: 650px;
+   width:800px;
+   height: 600px;
    margin-left: 10%;
-}
-
-
-@media (min-width: 1366px) and (min-height: 768px ){
-   #panorama {
-      width: 1200px;
-      height: 700px;
-      margin-left: 4%;
-   }
-}
-
-@media (min-width: 1440px) and (min-height: 900px){
-   #panorama {
-      width: 1300px;
-      height: 750px;
-      margin-left: 2%;
-   }
-}
-
-
-@media (min-width: 1536px) and (min-height: 864px){
-   #panorama {
-      width: 1400px;
-      height: 800px;
-      margin-left: 2%;
-   }
-}
-
-@media (min-width: 1680px) and (min-height: 1050px){
-   #panorama {
-      width: 1500px;
-      height: 850px;
-      margin-left: 2%;
-   }
-}
-
-@media (min-width: 1800px){
-   #panorama {
-      width: 1600px;
-      height: 950px;
-      margin-left: 2%;
-   }
-}
-
-@media (min-width: 1999px) {
-   #panorama {
-      width: 1700px;
-      height: 1200px;
-      margin-left: 4%;
-
-   }
-}
-
-@media (min-width: 2500px) {
-   #panorama {
-      width: 2000px;
-      height: 1400px;
-      margin-left: 4%;
-   }
 }
 
 
@@ -107,6 +48,146 @@
 }
 
 
+@media (min-width: 1200px) {
+   #panorama {
+      width: 1000px;
+      height: 650px;
+      margin-left: 10%;
+   }
+   #controls{
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      padding-bottom: 35px;
+   }
+}
+
+@media (min-width: 1366px) and (min-height: 768px ){
+   #panorama {
+      width: 1200px;
+      height: 700px;
+      margin-left: 4%;
+   }
+   #controls{
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      padding-bottom: 35px;
+   }
+}
+
+@media (min-width: 1440px) and (min-height: 900px){
+   #panorama {
+      width: 1300px;
+      height: 750px;
+      margin-left: 2%;
+   }
+   #controls{
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      padding-bottom: 35px;
+   }
+}
+
+
+@media (min-width: 1536px) and (min-height: 864px){
+   #panorama {
+      width: 1400px;
+      height: 800px;
+      margin-left: 2%;
+   }
+   #controls{
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      padding-bottom: 35px;
+   }
+}
+
+@media (min-width: 1680px) and (min-height: 1050px){
+   #panorama {
+      width: 1500px;
+      height: 850px;
+      margin-left: 2%;
+   }
+   #controls{
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      padding-bottom: 45px;
+   }
+}
+
+@media (min-width: 1800px){
+   #panorama {
+      width: 1600px;
+      height: 950px;
+      margin-left: 2%;
+   }
+   #controls{
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      padding-bottom: 45px;
+   }
+   #controls{
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      padding-bottom: 45px;
+   }
+}
+
+@media (min-width: 1999px) {
+   #panorama {
+      width: 1700px;
+      height: 1200px;
+      margin-left: 4%;
+
+   }
+   #controls{
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      padding-bottom: 45px;
+   }
+}
+
+@media (min-width: 2500px) {
+   #panorama {
+      width: 2000px;
+      height: 1400px;
+      margin-left: 4%;
+   }
+   #controls{
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      padding-bottom: 45px;
+   }
+}
+
+
+
 
 body{
     background-color: black;
@@ -120,10 +201,6 @@ body{
 a{ 
     text-decoration: none; 
     color: black;
-}
-
-#menu{
-   margin-top: -5px;
 }
 
 body::-webkit-scrollbar{
