@@ -25,8 +25,16 @@ pannellum.viewer('panorama', {
                     "cssClass": "welcomeHotspot",
                     "clickHandlerFunc": playAudio,
                     "clickHandlerArgs": "lowerWelcomeAudio",
-                    "text": "Welcome to McGill's Lower Campus. Here you see the Arts Building, but click and drag and you'll see the path to other places to explore on Campus. Go left for the Redpath Museum, or go right to make your way to Birks Reading Room and the Molson Stadium."
+                    "text": "Welcome to McGill's Lower Campus. Here you see the Arts Building, but click and drag and you'll see the path to other places to explore on Campus. Go left for the Redpath Museum, or go right to make your way to Birks Reading Room and the Molson Stadium. Click here to hear more!"
                 },
+                {//help hotspot
+                "pitch": -15,
+                "yaw": -70,
+                "type": "info",
+                "cssClass": "helpHotspot",
+    			"URL": "https://sites.google.com/view/quizthatso/hints",
+                "text":"Hints"
+           		},
                 {
                     "pitch": -0.6,
                     "yaw": 120,
@@ -63,6 +71,7 @@ pannellum.viewer('panorama', {
                     "text": "To Redpath Museum",
                     "sceneId": "pano5"
                 },
+              
                 {//easter egg1 - lower campus field
                 "pitch": -5,
                 "yaw": 180,
@@ -98,7 +107,7 @@ pannellum.viewer('panorama', {
             //the list of hotspots belonging to this specific hotspot
             "hotSpots": [
                 {
-                    "pitch": 5.1,
+                    "pitch": -5,
                     "yaw": -30,
                     "type": "scene",
                     "cssClass": "directionArrow",
@@ -114,6 +123,14 @@ pannellum.viewer('panorama', {
                     "clickHandlerArgs": "molsonAudio",
                     "text": "Welcome to Molson Stadium. Click here to hear more about this space.",
                 },
+                {//help hotspot
+                "pitch": -5,
+                "yaw": -22.1,
+                "type": "info",
+                "cssClass": "helpHotspot",
+    			"URL": "https://sites.google.com/view/quizthatso/hints",
+                "text":"Hints"
+           		},
                 /*commented out bc i don't think we need it{
                     "pitch": -2.1,
                     "yaw": 15,
@@ -198,6 +215,14 @@ pannellum.viewer('panorama', {
                     "clickHandlerArgs": "birksAudio",
                     "text": "Welcome to Birks Reading Room. Click here to hear more about this space.",
                 },
+                 {//help hotspot
+                "pitch": -5,
+                "yaw": -22.1,
+                "type": "info",
+                "cssClass": "helpHotspot",
+    			"URL": "https://sites.google.com/view/quizthatso/hints",
+                "text":"Hints"
+           		},
                 {
                     "pitch": -2.1,
                     "yaw": 45,
@@ -267,7 +292,14 @@ pannellum.viewer('panorama', {
                     "clickHandlerArgs": "moyseAudio",
                     "text": "Welcome to Moyse Hall. Click here to hear more about this space.",
                 },
-                
+                {//help hotspot
+                "pitch": -35,
+                "yaw": -22.1,
+                "type": "info",
+                "cssClass": "helpHotspot",
+    			"URL": "https://sites.google.com/view/quizthatso/hints",
+                "text":"Hints"
+           		},
                 {
                     "pitch": -2.1,
                     "yaw": 0,
@@ -385,6 +417,14 @@ pannellum.viewer('panorama', {
                     "clickHandlerArgs": "redpathAudio",
                     "text": "Welcome to Redpath Museum. Look all around to find two of your teammates. Click here to hear more about the museum."
                 },
+                  {//help hotspot
+                "pitch": -20,
+                "yaw": -50,
+                "type": "info",
+                "cssClass": "helpHotspot",
+    			"URL": "https://sites.google.com/view/quizthatso/hints",
+                "text":"Hints"
+           		},
                 {//easter egg redpathEgg
                 "pitch": -2.1,
                 "yaw": 95,
