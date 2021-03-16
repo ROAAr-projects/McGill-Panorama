@@ -16,7 +16,7 @@ pannellum.viewer('panorama', {
             "horizonRoll": -2.5,//added to correct non-level panorama
             "compass": true,
             "type": "equirectangular",
-            "panorama": "https://i.imgur.com/oSC3BEj.jpg",
+            "panorama": "https://i.imgur.com/KXNhLh5.jpg",
             "hotSpots": [
                {//welcome hotspot - sound works. 
                     "yaw": -50,
@@ -103,7 +103,7 @@ pannellum.viewer('panorama', {
             "autoLoad": true,
             "type": "equirectangular",
             //image of the panorama
-           "panorama": "https://i.imgur.com/SQnSsQt.jpeg",
+           "panorama": "https://i.imgur.com/aqVfdKn.jpg",
             //the list of hotspots belonging to this specific hotspot
             "hotSpots": [
                 {
@@ -193,7 +193,7 @@ pannellum.viewer('panorama', {
             "yaw": 5,
             "compass": true,
             "type": "equirectangular",
-            "panorama": "https://i.imgur.com/8IdaXtl.jpeg",
+            "panorama": "https://i.imgur.com/bufAOgZ.jpg",
             "hotSpots": [
                 /*
                  I don't think we need this scene link. {
@@ -281,7 +281,7 @@ pannellum.viewer('panorama', {
             "yaw": 5,
             "compass": true,
             "type": "equirectangular",
-            "panorama": "https://i.imgur.com/s5RrK6d.jpeg",
+            "panorama": "https://i.imgur.com/oY9ZxJX.jpg",
             "hotSpots": [
                 {//welcome hotspot  
                     "yaw": -2.1,
@@ -377,7 +377,7 @@ pannellum.viewer('panorama', {
             "compass": true,
             "autoload": true,
             "type": "equirectangular",
-            "panorama": "https://i.imgur.com/AAeUIbl.jpeg",
+            "panorama": "https://i.imgur.com/SpytBCB.jpg",
             "hotSpots": [
             
                 {
